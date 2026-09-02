@@ -1,0 +1,496 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Plain keyframes (not Tailwind-utility-driven) used directly via `animation:`
+   properties in @layer components below — kept outside any @layer so they're
+   always emitted regardless of whether a matching animate-* utility class is
+   referenced anywhere in the scanned content. */
+@keyframes pulse2 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes flow {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-porcelain text-ink font-body antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .dark h1,
+  .dark h2,
+  .dark h3 {
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 3px solid #6d5cff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: #6d5cff4d;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* gradient text, used for headline highlights */
+  .grad-text {
+    @apply bg-molten bg-clip-text text-transparent;
+  }
+
+  /* eyebrow label with a short gradient tick */
+  .eyebrow {
+    @apply font-mono text-[12px] tracking-[0.22em] uppercase text-bronze inline-flex items-center gap-2.5 font-semibold;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    @apply bg-molten rounded-sm;
+  }
+  .dark .eyebrow {
+    @apply text-gold;
+  }
+
+  /* scroll reveal */
+  .rv {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .rv.in {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rv {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* header nav dropdown */
+  .dd {
+    @apply absolute left-0 min-w-[300px] bg-paper border border-line rounded-2xl p-2.5 shadow-dd;
+    top: calc(100% + 10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: 0.18s ease;
+  }
+  .dd.dd-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* mobile menu slide-in */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .mobile-menu.open {
+    transform: none;
+  }
+
+  /* hero background */
+  .hero-bg {
+    background:
+      radial-gradient(1100px 560px at 80% -14%, rgba(56, 189, 248, 0.16), transparent 62%),
+      radial-gradient(1000px 560px at 12% 112%, rgba(109, 92, 255, 0.15), transparent 62%),
+      radial-gradient(700px 420px at 55% -20%, rgba(159, 139, 255, 0.12), transparent 60%),
+      #fbfbfe;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(16, 24, 38, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 24, 38, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, #000 30%, transparent 75%);
+  }
+  .hero-badge-dot {
+    animation: pulse2 2.4s infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-badge-dot {
+      animation: none;
+    }
+  }
+
+  /* interior page hero */
+  .phero-bg {
+    background:
+      radial-gradient(900px 480px at 82% -20%, rgba(56, 189, 248, 0.15), transparent 62%),
+      radial-gradient(760px 480px at 8% 118%, rgba(109, 92, 255, 0.13), transparent 62%),
+      #fbfbfe;
+  }
+
+  /* foundry line (signature homepage element) */
+  .fl-track {
+    position: relative;
+  }
+  .fl-track::before {
+    content: '';
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #5646e5, #6d5cff 40%, #9f8bff 55%, #7fd4ff 80%, #4cc3ff);
+  }
+  .fl-track::after {
+    content: '';
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, transparent 0 40%, rgba(255, 255, 255, 0.95) 50%, transparent 60% 100%);
+    background-size: 200% 100%;
+    animation: flow 3.2s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fl-track::after {
+      animation: none;
+    }
+  }
+  @media (max-width: 1020px) {
+    .fl-track::before,
+    .fl-track::after {
+      display: none;
+    }
+  }
+
+  /* trinity + generic cards top accent */
+  .tcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    @apply bg-molten;
+  }
+  .tcard.cool::before {
+    background: linear-gradient(90deg, #1e8fd5, #4cc3ff);
+  }
+
+  /* industry hover-reveal cards */
+  .ind-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(12, 19, 34, 0.15), rgba(12, 19, 34, 0.88) 78%);
+  }
+  .ind-card .ind-bg {
+    transition: transform 0.5s ease;
+  }
+  .ind-card:hover .ind-bg {
+    transform: scale(1.06);
+  }
+  .ind-card .ind-reveal {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.3s ease;
+  }
+  .ind-card:hover .ind-reveal,
+  .ind-card:focus-visible .ind-reveal {
+    max-height: 130px;
+    opacity: 1;
+    margin-top: 8px;
+  }
+
+  /* medallion tab coins */
+  .coin-bronze {
+    background: radial-gradient(circle at 32% 28%, #e0a878, #b0713c 62%, #7c4a22);
+  }
+  .coin-silver {
+    background: radial-gradient(circle at 32% 28%, #e6edf3, #98a6b3 62%, #5f6c79);
+  }
+  .coin-gold {
+    background: radial-gradient(circle at 32% 28%, #fbe29a, #e9a83c 62%, #a96f17);
+  }
+  .coin-semantic {
+    background: radial-gradient(circle at 32% 28%, #a9e4ff, #4cc3ff 62%, #1e6fa5);
+  }
+  .med-panel::after {
+    content: '';
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    @apply bg-molten;
+    opacity: 0.14;
+    filter: blur(6px);
+  }
+  .med-panel li::before {
+    content: '\25C6';
+    color: #6d5cff;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* pipeline connector arrows */
+  .pn + .pn {
+    margin-left: 34px;
+  }
+  .pn + .pn::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    background: #6d5cff;
+  }
+  .pn + .pn::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-3.5px) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #6d5cff;
+    border-right: 2px solid #6d5cff;
+  }
+
+  /* checklist marker */
+  .check-mark {
+    @apply bg-molten;
+  }
+
+  /* quote block giant quotation mark */
+  .quote-mark::before {
+    content: '\201C';
+    position: absolute;
+    top: -30px;
+    left: 24px;
+    @apply font-display;
+    font-size: 190px;
+    color: rgba(109, 92, 255, 0.16);
+    line-height: 1;
+  }
+
+  /* cta band bottom accent */
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 4px;
+    @apply bg-molten;
+  }
+
+  /* case dots */
+  .case-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e4e4ea;
+    transition: 0.2s;
+  }
+  .case-dot.on {
+    background: #6d5cff;
+    width: 22px;
+    border-radius: 99px;
+  }
+
+  /* faq accordion */
+  .faq summary {
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq summary::after {
+    content: '+';
+    font-size: 22px;
+    color: #5646e5;
+    transition: 0.2s;
+  }
+  .faq[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  /* architecture diagram wrapper: horizontal scroll on small screens, no vertical scrollbar jump */
+  .arch-scroll {
+    overflow-x: auto;
+    line-height: 0;
+  }
+
+  /* foundry-flow hero visual wrapper */
+  .fv-panel {
+    border-radius: 26px;
+    box-shadow: 0 40px 80px -34px rgba(16, 24, 38, 0.45);
+    overflow-x: auto;
+    line-height: 0;
+  }
+  .fv-panel svg {
+    min-width: 820px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fv-particles,
+    .fv-orbits {
+      display: none;
+    }
+  }
+
+  /* architecture diagram internals (Fig. 01-07) — these class names are baked
+     into the raw SVG strings in components/diagrams/*.svg.ts, so they must be
+     plain CSS rather than Tailwind utilities. */
+  .arch svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 760px;
+  }
+  .arch text {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .arch .bx {
+    fill: #111b2e;
+    stroke: rgba(255, 255, 255, 0.16);
+    stroke-width: 1;
+  }
+  .arch .bx2 {
+    fill: #16243c;
+    stroke: rgba(255, 255, 255, 0.14);
+    stroke-width: 1;
+  }
+  .arch .hl {
+    stroke: #6d5cff;
+    stroke-width: 1.4;
+  }
+  .arch .hb {
+    stroke: #4cc3ff;
+    stroke-width: 1.4;
+  }
+  .arch .lbl {
+    fill: #edf1f7;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .arch .sub {
+    fill: #8ca0b8;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
+  .arch .kicker {
+    fill: #9f8bff;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+  }
+  .arch .kb {
+    fill: #7fd4ff;
+  }
+  .arch .ar {
+    stroke: #5e7290;
+    stroke-width: 1.6;
+    fill: none;
+    marker-end: url(#arr);
+  }
+  .arch .art {
+    stroke: #6d5cff;
+    stroke-width: 1.8;
+    fill: none;
+    marker-end: url(#arrT);
+  }
+  .arch .arb {
+    stroke: #4cc3ff;
+    stroke-width: 1.8;
+    fill: none;
+    marker-end: url(#arrB);
+  }
+  .arch .plane {
+    fill: rgba(109, 92, 255, 0.06);
+    stroke: #6d5cff;
+    stroke-dasharray: 5 5;
+    stroke-width: 1.2;
+  }
+  .arch .planeb {
+    fill: rgba(76, 195, 255, 0.05);
+    stroke: #4cc3ff;
+    stroke-dasharray: 5 5;
+    stroke-width: 1.2;
+  }
+  .arch .chip {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 255, 255, 0.14);
+  }
+
+  /* toast */
+  .toast {
+    position: fixed;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 400;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
