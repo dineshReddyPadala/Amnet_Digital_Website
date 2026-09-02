@@ -12,6 +12,13 @@ module.exports = {
       // `tablet:` on every element that sets both for the same property.
       tablet: { max: '1020px' },
       mobile: { max: '740px' },
+      // Dedicated header breakpoint: the full desktop nav (logo + all links +
+      // CTA) measures ~962px wide even with the `tablet:` spacing squeeze, so
+      // switching to the burger menu at the shared `mobile` cutoff (740px)
+      // left a broken zone (~740-960px) where the nav overflowed the page
+      // horizontally. Kept separate from `mobile`/`tablet` so it doesn't
+      // affect the grid breakpoints used everywhere else on the site.
+      navCollapse: { max: '1023px' },
       sm: '640px',
       md: '768px',
       lg: '1024px',

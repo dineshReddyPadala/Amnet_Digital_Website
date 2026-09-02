@@ -47,7 +47,7 @@ export function NavDropdown({ label, items, allHref, allLabel }: NavDropdownProp
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1.5 py-2.5 px-3.5 tablet:px-2.5 text-[#3E4757] text-[14.5px] font-medium rounded-[10px] bg-transparent border-none transition-colors hover:text-ink hover:bg-black/5 whitespace-nowrap"
+        className="flex items-center gap-1.5 py-2.5 px-3.5 text-[#3E4757] text-[14.5px] font-medium rounded-[10px] bg-transparent border-none transition-colors hover:text-ink hover:bg-black/5 whitespace-nowrap"
         aria-haspopup="true"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}

@@ -48,16 +48,21 @@ export const PRIMARY_NAV = [
   { href: '/careers', label: 'Careers' },
 ];
 
-export const MOBILE_MENU_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/data-foundry', label: 'Amnet Data Foundry', sub: true },
-  { href: '/agent-foundry', label: 'Amnet Agent Foundry', sub: true },
-  { href: '/aidlc', label: 'AIDLC', sub: true },
-  { href: '/dam', label: 'AI-Powered DAM', sub: true },
-  { href: '/services', label: 'Services' },
-  { href: '/industries', label: 'Industries' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/about', label: 'About' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/contact', label: 'Talk to an Expert →', highlight: true },
+export type MobileNavEntry =
+  | { type: 'link'; href: string; label: string; highlight?: boolean }
+  | { type: 'group'; label: string; items: NavDropdownItem[]; allHref?: string; allLabel?: string };
+
+// Mobile burger menu structure. Platforms/Industries reuse the exact same
+// PLATFORM_LINKS/INDUSTRY_LINKS data as the desktop hover dropdowns (single
+// source of truth) so mobile visitors can reach every industry/platform page
+// directly, not just the two landing pages.
+export const MOBILE_NAV: MobileNavEntry[] = [
+  { type: 'link', href: '/', label: 'Home' },
+  { type: 'group', label: 'Platforms', items: PLATFORM_LINKS },
+  { type: 'link', href: '/services', label: 'Services' },
+  { type: 'group', label: 'Industries', items: INDUSTRY_LINKS, allHref: '/industries', allLabel: 'All industries' },
+  { type: 'link', href: '/case-studies', label: 'Case Studies' },
+  { type: 'link', href: '/about', label: 'About' },
+  { type: 'link', href: '/careers', label: 'Careers' },
+  { type: 'link', href: '/contact', label: 'Talk to an Expert →', highlight: true },
 ];
