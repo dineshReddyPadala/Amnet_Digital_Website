@@ -21,7 +21,8 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        crumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
+        fullWidth
+        crumbs={[]}
         eyebrow="Talk to an expert"
         heading={
           <>

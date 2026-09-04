@@ -39,6 +39,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Careers' }]}
         eyebrow="Join us"
         heading={
@@ -56,17 +57,20 @@ export default function CareersPage() {
       <Section>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Why us"
-            heading="The Amnet ADvantage"
+            heading="The Amnet Advantage"
             lede="At Amnet, your ideas matter, your contributions are recognized, and your growth journey is taken seriously. If you want to challenge yourself with autonomous and agentic AI in a future-focused organization — you belong here."
           />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid">
             {PERKS.map((perk) => (
-              <Reveal key={perk.title}>
-                <div className="bg-paper border border-line rounded-[18px] p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-card">
-                  <span className="text-[26px]">{perk.em}</span>
-                  <h3 className="text-[17.5px] mt-3 mb-1.5">{perk.title}</h3>
-                  <p className="text-[14.5px] text-muted">{perk.body}</p>
+              <Reveal key={perk.title} asChild>
+                <div className="eq-card bg-paper border border-line rounded-[18px] p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-card">
+                  <div>
+                    <span className="text-[26px] leading-none block h-[26px]">{perk.em}</span>
+                    <h3 className="text-[19px] leading-snug mt-3 mb-1.5">{perk.title}</h3>
+                  </div>
+                  <p className="text-[14px] text-muted">{perk.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -82,15 +86,15 @@ export default function CareersPage() {
               <Reveal key={job.title}>
                 <div className="flex mobile:flex-col mobile:items-start items-center gap-[18px] bg-carbon-2 border border-line-dark rounded-2xl py-5 px-6 transition-transform duration-150 hover:translate-x-1.5">
                   <div>
-                    <b className="font-display text-[16.5px] text-white">{job.title}</b>
-                    <div className="font-mono text-xs text-[#8FA0B8] flex gap-4 mt-1 flex-wrap">
+                    <b className="text-[16.5px] text-white">{job.title}</b>
+                    <div className="text-xs text-[#8FA0B8] flex gap-4 mt-1 flex-wrap">
                       <span>{job.location}</span>
                       <span>{job.experience}</span>
                       <span>{job.stack}</span>
                     </div>
                   </div>
                   <Button href="/contact" variant="ghost-dark" size="sm" className="ml-auto mobile:ml-0">
-                    Apply →
+                    Apply
                   </Button>
                 </div>
               </Reveal>
@@ -106,17 +110,17 @@ export default function CareersPage() {
       <Section>
         <Wrap>
           <SectionHead center eyebrow="Life at Amnet" heading="Voices from the team" />
-          <div className="grid grid-cols-3 tablet:grid-cols-1 gap-[22px]">
+          <div className="eq-grid eq-grid-stack-tablet">
             {TESTIMONIALS.map((t) => (
-              <Reveal key={t.name}>
-                <div className="bg-paper border border-line rounded-[18px] p-[30px]">
-                  <p className="text-[15.5px]">&ldquo;{t.quote}&rdquo;</p>
+              <Reveal key={t.name} asChild>
+                <div className="eq-card bg-paper border border-line rounded-[18px] p-[30px]">
+                  <p className="text-[14px]">&ldquo;{t.quote}&rdquo;</p>
                   <div className="flex gap-3 mt-[18px] items-center">
                     <span className="w-11 h-11 rounded-full bg-molten grid place-items-center font-bold text-white">
                       {t.initial}
                     </span>
                     <span>
-                      <b className="font-display block">{t.name}</b>
+                      <b className="block">{t.name}</b>
                       <span className="text-[13px] text-muted">{t.tenure}</span>
                     </span>
                   </div>

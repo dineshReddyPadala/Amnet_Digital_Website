@@ -25,7 +25,7 @@ const SERVICE_OPTIONS = [
 
 const fieldClass =
   'w-full py-[14px] px-4 rounded-xl border-[1.5px] border-line bg-paper font-body text-[15px] text-ink transition-colors focus:outline-none focus:border-gold focus:shadow-[0_0_0_4px_rgba(109,92,255,0.15)]';
-const labelClass = 'block font-mono text-[11.5px] tracking-[0.14em] uppercase text-muted mb-[7px]';
+const labelClass = 'block font-body text-[11.5px] tracking-[0.14em] uppercase text-muted mb-[7px]';
 
 export function ContactForm() {
   const { showToast } = useToast();
@@ -109,7 +109,7 @@ export function ContactForm() {
       <div className="col-span-2 mobile:col-span-1">
         <button
           type="submit"
-          className="inline-flex items-center gap-2.5 rounded-full font-semibold font-display py-[15px] px-7 text-[15.5px] bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform group"
+          className="inline-flex items-center gap-2.5 rounded-full font-semibold font-body py-[15px] px-7 text-[14px] bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform group"
         >
           Send Message
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" className="transition-transform group-hover:translate-x-1">

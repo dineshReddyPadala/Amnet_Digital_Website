@@ -10,9 +10,9 @@ export function CheckList({
   className?: string;
 }) {
   return (
-    <ul className={`grid gap-3 list-none ${className}`}>
+    <ul className={`grid gap-5 list-none ${className}`}>
       {items.map((item, i) => (
-        <li key={i} className="flex gap-3 items-start text-[15.5px] dark:text-[#D6DEEA]">
+        <li key={i} className="flex gap-3 items-start text-[14px] dark:text-[#D6DEEA]">
           <i className="flex-none w-[22px] h-[22px] rounded-[7px] bg-molten text-white grid place-items-center not-italic text-xs font-bold mt-0.5">
             {icon}
           </i>

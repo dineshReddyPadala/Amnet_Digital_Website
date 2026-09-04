@@ -42,6 +42,7 @@ export default function AidlcPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Platforms' }, { label: 'AIDLC' }]}
         eyebrow="AI Development Lifecycle"
         heading={
@@ -75,6 +76,7 @@ export default function AidlcPage() {
       <Section tight className="bg-porcelain">
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The lifecycle"
             heading="Six phases. One continuous loop. Quality gates at every turn."
             lede="AIDLC treats AI delivery as an engineering discipline: each phase has defined entry criteria, exit criteria, and AI-native quality gates that conventional QA can't provide."
@@ -89,10 +91,10 @@ export default function AidlcPage() {
 
       <Section>
         <Wrap>
-          <SectionHead eyebrow="Core capabilities" heading="Every discipline enterprise AI demands, in one repeatable model" />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <SectionHead fullWidth eyebrow="Core capabilities" heading="Every discipline enterprise AI demands, in one repeatable model" />
+          <div className="eq-grid">
             {CAPABILITIES.map((c) => (
-              <Reveal key={c.title}>
+              <Reveal key={c.title} asChild>
                 <ServiceCard title={c.title} items={c.items} />
               </Reveal>
             ))}
@@ -108,7 +110,7 @@ export default function AidlcPage() {
               <h2 className="text-[clamp(24px,2.8vw,32px)] my-3.5 mt-3.5 mb-[18px]">
                 We treat AI testing as a first-class engineering discipline
               </h2>
-              <p className="text-[clamp(17px,1.5vw,20px)] text-[#B9C2D0] mb-6 max-w-[64ch]">
+              <p className="text-[clamp(17px,1.5vw,18px)] text-[#B9C2D0] mb-6 max-w-[64ch]">
                 Traditional QA is not enough. Unlike conventional software, AI systems require continuous validation
                 beyond functionality. Our framework validates:
               </p>
@@ -117,10 +119,9 @@ export default function AidlcPage() {
                 <CheckList items={VALIDATES_RIGHT} />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-3.5">
+            <div className="eq-grid eq-grid-2">
               {OUTCOMES.map((o) => (
-                <Card key={o.title}>
-                  <h3 className="mt-0 text-gold text-[19px]">{o.title}</h3>
+                <Card key={o.title} equal title={<span className="text-gold">{o.title}</span>}>
                   <p>{o.body}</p>
                 </Card>
               ))}
