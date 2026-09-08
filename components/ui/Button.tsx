@@ -14,7 +14,7 @@ type ButtonProps = {
 };
 
 const base =
-  'inline-flex items-center gap-2.5 rounded-full font-semibold font-display tracking-[0.01em] transition-all duration-150 group';
+  'inline-flex items-center gap-2.5 rounded-full font-semibold tracking-[0.01em] transition-all duration-150 group';
 
 const variants: Record<Variant, string> = {
   molten: 'bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 hover:shadow-[0_16px_38px_-10px_rgba(109,92,255,0.65)]',
@@ -26,24 +26,21 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  md: 'py-[15px] px-7 text-[15.5px]',
+  md: 'py-[15px] px-7 text-[14px]',
   sm: 'py-2.5 px-5 text-sm',
 };
 
-export function Button({ href, children, variant = 'molten', size = 'md', arrow = false, className = '' }: ButtonProps) {
+export function Button({ href, children, variant = 'molten', size = 'md', arrow, className = '' }: ButtonProps) {
+  // Primary (molten) and CTA-style dark ghost always show → unless arrow={false}
+  const showArrow = arrow ?? (variant === 'molten' || variant === 'ghost-dark');
+
   return (
     <Link href={href} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}>
       {children}
-      {arrow && (
-        <svg
-          width="16"
-          height="12"
-          viewBox="0 0 16 12"
-          fill="none"
-          className="transition-transform duration-150 group-hover:translate-x-1"
-        >
-          <path d="M10 1l5 5-5 5M15 6H1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+      {showArrow && (
+        <span aria-hidden className="transition-transform duration-150 group-hover:translate-x-1">
+          →
+        </span>
       )}
     </Link>
   );

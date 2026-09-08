@@ -41,9 +41,9 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <Section tight className="!pt-16 !pb-[30px]">
+      <Section tight className="!pt-16 !pb-[30px] bg-white">
         <Wrap>
-          <Reveal className="font-mono text-xs tracking-[0.2em] text-center mb-[26px] text-[#707B8E]">
+          <Reveal className="font-body text-xs tracking-[0.2em] text-center mb-[26px] text-[#707B8E]">
             DATA · AI · DECISION INTELLIGENCE · PRODUCT ENGINEERING · CLOUD · DEVOPS · AUTOMATION QA
           </Reveal>
           <Reveal className="fv-panel">
@@ -63,6 +63,7 @@ export default function HomePage() {
       <Section dark>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The executive challenge"
             heading={
               <>
@@ -73,16 +74,16 @@ export default function HomePage() {
             }
             lede="Data isn't the problem. Trust and action are. Most data initiatives stop at data — not decisions."
           />
-          <div className="grid grid-cols-2 tablet:grid-cols-1 gap-[22px]">
+          <div className="grid grid-cols-2 tablet:grid-cols-1 gap-20 tablet:gap-10 mobile:gap-6">
             <Reveal>
               <PainList items={PAIN_ITEMS} />
             </Reveal>
-            <Reveal className="flex flex-col justify-center gap-[22px]">
-              <p className="font-display text-[22px] text-white leading-[1.4]">
+            <Reveal className="flex flex-col justify-start gap-[22px]">
+              <p className="font-body text-[22px] text-white leading-[1.4]">
                 The questions every executive is asking:
               </p>
               <CheckList icon="?" items={EXEC_QUESTIONS} />
-              <p className="text-[#9AA9BF] text-[15px]">
+              <p className="text-[#9AA9BF] text-[14px]">
                 Enterprise AI requires more than models. It requires an end-to-end platform — and a partner who has
                 industrialized its delivery.
               </p>
@@ -97,11 +98,13 @@ export default function HomePage() {
       <Section tight>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The answer, engineered"
             heading="One connected stack — from raw data to autonomous outcomes"
             lede="Amnet Data Foundry forges trusted data. Amnet Agent Foundry turns it into governed decisions and actions. AIDLC industrializes how it all ships. Three platforms, one closed loop."
           />
           <ArchDiagram
+            className="arch-home"
             svg={homeArchStackSvg}
             captionTitle="Fig. 01 — The AI enterprise, end to end"
             captionNote="the trinity in one architecture"
@@ -112,6 +115,7 @@ export default function HomePage() {
       <Section>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Inside Amnet Data Foundry"
             heading="From raw ore to Gold: the Medallion, built by agents"
             lede="Explore how autonomous data engineering agents forge fragmented enterprise data into decision-ready business intelligence. Click each layer."
@@ -123,6 +127,7 @@ export default function HomePage() {
       <Section className="bg-paper border-t border-b border-line">
         <Wrap>
           <SectionHead
+            fullWidth
             center
             eyebrow="The Trinity Growth Framework"
             heading="Three engines. One closed loop of growth."
@@ -134,7 +139,7 @@ export default function HomePage() {
 
       <Section>
         <Wrap>
-          <SectionHead eyebrow="Proof, not promises" heading="Outcomes we've engineered" />
+          <SectionHead fullWidth eyebrow="Proof, not promises" heading="Outcomes we've engineered" />
           <CaseCarousel />
         </Wrap>
       </Section>
@@ -142,22 +147,23 @@ export default function HomePage() {
       <Section dark>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Industries"
             heading="Decision intelligence, tuned to your domain"
             lede="Powered by Amnet Data Foundry, our platforms adapt to industry-specific data, workflows, and challenges. Hover to preview, click to explore."
           />
-          <IndustryGrid />
+          <IndustryGrid exploreWhite />
         </Wrap>
       </Section>
 
       <Section>
         <Wrap>
-          <SectionHead center eyebrow="Why CTOs call Amnet Digital" heading="AI-first DNA. Full-stack execution. Startup speed." />
+          <SectionHead fullWidth center eyebrow="Why CTOs call Amnet Digital" heading="AI-first DNA. Full-stack execution. Startup speed." />
           <WhyAmnetGrid />
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <QuoteBlock
             quote="In a world where innovation often outpaces application, we have chosen to stay grounded in what truly matters: solving real problems. Every solution we deliver must create tangible value — not just promise."
@@ -168,7 +174,7 @@ export default function HomePage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             heading="Ready to turn your data into decisions?"

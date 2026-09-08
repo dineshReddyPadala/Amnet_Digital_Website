@@ -44,6 +44,7 @@ export default function AgentFoundryPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Platforms' }, { label: 'Amnet Agent Foundry' }]}
         eyebrow="Enterprise decision & execution platform"
         eyebrowClassName="!text-signal-deep"
@@ -84,6 +85,7 @@ export default function AgentFoundryPage() {
       <Section tight>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Under the hood"
             eyebrowClassName="!text-signal-deep"
             heading="Perceive → reason → plan → act, with humans in the loop"
@@ -101,14 +103,15 @@ export default function AgentFoundryPage() {
       <Section>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Why Amnet Agent Foundry"
             heading="No more dashboards that stop at insights. We automate execution."
             lede="Organizations generate enormous business data, but turning insight into timely action remains the gap. Amnet Agent Foundry bridges it — continuously analyzing signals, recommending next-best actions, and orchestrating intelligent workflows across your systems."
           />
-          <div className="grid grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 gap-[18px]">
+          <div className="eq-grid eq-grid-4">
             {WHY_CARDS.map((c) => (
-              <Reveal key={c.title}>
-                <Card icon={c.icon} title={c.title}>
+              <Reveal key={c.title} asChild>
+                <Card equal icon={c.icon} title={c.title}>
                   <p>{c.body}</p>
                 </Card>
               </Reveal>
@@ -120,10 +123,10 @@ export default function AgentFoundryPage() {
       <Section dark>
         <Wrap>
           <SectionHead eyebrow="The Trinity Growth Framework" heading="Three decision engines, one growth loop" />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid">
             {ENGINE_CARDS.map((c) => (
-              <Reveal key={c.title}>
-                <Card icon={c.icon} title={c.title}>
+              <Reveal key={c.title} asChild>
+                <Card equal icon={c.icon} title={c.title}>
                   <p>{c.body}</p>
                 </Card>
               </Reveal>
@@ -142,7 +145,7 @@ export default function AgentFoundryPage() {
                 <br />
                 Human where it matters.
               </h2>
-              <p className="text-[clamp(17px,1.5vw,20px)] text-muted mb-[22px] max-w-[64ch]">
+              <p className="text-[clamp(17px,1.5vw,18px)] text-muted mb-[22px] max-w-[64ch]">
                 Routine, low-risk decisions are automated end-to-end. High-impact decisions route through
                 configurable approval workflows with explainable recommendations, policies, and full auditability.
               </p>

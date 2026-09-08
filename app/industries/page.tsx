@@ -17,6 +17,7 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Industries' }]}
         eyebrow="Industry solutions"
         heading={
@@ -33,7 +34,7 @@ export default function IndustriesPage() {
 
       <Section>
         <Wrap>
-          <SectionHead eyebrow="Industries we serve" heading="Choose your battlefield" />
+          <SectionHead fullWidth eyebrow="Industries we serve" heading="Choose your battlefield" />
           <IndustryGrid />
         </Wrap>
       </Section>
@@ -41,6 +42,7 @@ export default function IndustriesPage() {
       <Section dark>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="How we help"
             heading="Data → Intelligence → Action → Outcomes"
             lede="Every industry solution combines Amnet Data Foundry (unified, trusted data) with AI agents (insights, recommendations, and actions) through the Trinity Growth Framework."

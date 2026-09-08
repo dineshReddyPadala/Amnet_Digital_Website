@@ -7,7 +7,7 @@ export function CaseList() {
     <div className="grid gap-[26px]">
       {CASES.map((caseStudy) => (
         <Reveal key={caseStudy.title}>
-          <CaseCard caseStudy={caseStudy} />
+          <CaseCard caseStudy={caseStudy} showAllLink={false} />
         </Reveal>
       ))}
     </div>

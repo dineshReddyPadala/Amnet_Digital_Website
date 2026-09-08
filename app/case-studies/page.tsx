@@ -15,6 +15,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Case Studies' }]}
         eyebrow="Client outcomes"
         heading={

@@ -28,6 +28,7 @@ export default function DamPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Platforms' }, { label: 'AI-Powered DAM' }]}
         eyebrow="Digital asset management, reimagined"
         heading={
@@ -45,14 +46,15 @@ export default function DamPage() {
       <Section>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The challenge"
             heading="Traditional DAM manages files. It doesn't unlock their value."
             lede="As digital content grows, enterprises struggle with fragmented storage, manual tagging, duplicate assets, inconsistent governance, and slow search."
           />
-          <div className="grid grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 gap-[18px]">
+          <div className="eq-grid eq-grid-4">
             {CHALLENGE_CARDS.map((c) => (
-              <Reveal key={c.title}>
-                <Card icon={c.icon} title={c.title}>
+              <Reveal key={c.title} asChild>
+                <Card equal icon={c.icon} title={c.title}>
                   <p>{c.body}</p>
                 </Card>
               </Reveal>
@@ -64,6 +66,7 @@ export default function DamPage() {
       <Section tight className="bg-porcelain">
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Under the hood"
             heading="Every asset becomes searchable intelligence"
             lede="From raw media to natural-language discovery: AI models enrich every frame, page, and soundbite — indexed once, findable forever."
