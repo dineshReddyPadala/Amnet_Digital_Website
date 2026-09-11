@@ -25,10 +25,13 @@ export function Hero() {
           We help enterprises turn fragmented data, applications and workflows into intelligent systems
           that predict, decide and act — powered by Data, AI and Agentic Automation.
         </h2>
-        <p className="text-[clamp(17px,1.5vw,20px)] text-muted mx-auto mb-9 max-w-[56ch]">
+        <p className="text-[clamp(17px,1.5vw,20px)] text-muted mx-auto mb-5 max-w-[56ch]">
           Most AI initiatives stall at insights. Amnet Digital closes the loop — Amnet Data Foundry builds trusted,
           AI-ready data; Amnet Agent Foundry turns it into decisions and actions; AIDLC delivers it all with
           mission-critical engineering rigor.
+        </p>
+        <p className="font-mono text-xs tracking-[0.18em] uppercase text-[#414B5E] mx-auto mb-9">
+          Data + AI + Agentic AI + Digital Engineering
         </p>
         <div className="flex gap-4 justify-center flex-wrap mb-[26px]">
           <Button href="/services" variant="molten" arrow>
