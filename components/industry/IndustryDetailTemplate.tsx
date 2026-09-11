@@ -65,7 +65,7 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead fullWidth eyebrow="How it works" heading="From your data to your outcomes" />
           <div className="relative overflow-hidden rounded-[22px] border border-line-dark bg-carbon py-8 px-5 mobile:px-4">
@@ -102,7 +102,7 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand heading={industry.ctaHeading} paragraph={industry.ctaParagraph}>
             <Button href="/contact" variant="molten">

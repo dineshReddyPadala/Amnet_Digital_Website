@@ -43,7 +43,7 @@ export default function DamPage() {
         </Button>
       </PageHero>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -63,7 +63,7 @@ export default function DamPage() {
         </Wrap>
       </Section>
 
-      <Section tight className="bg-porcelain">
+      <Section tight className="bg-porcelain !pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -93,7 +93,7 @@ export default function DamPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             heading="Unlock more value from every digital asset."

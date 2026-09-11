@@ -104,7 +104,7 @@ export default function ServicesPage() {
         </Button>
       </PageHero>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -122,7 +122,7 @@ export default function ServicesPage() {
         </Wrap>
       </Section>
 
-      <Section tight className="bg-porcelain">
+      <Section tight className="bg-porcelain !pt-0">
         <Wrap>
           <SectionHead
             fullWidth

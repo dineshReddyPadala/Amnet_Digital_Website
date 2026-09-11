@@ -73,7 +73,7 @@ export default function AidlcPage() {
         />
       </PageHero>
 
-      <Section tight className="bg-porcelain">
+      <Section tight className="bg-porcelain !pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -89,7 +89,7 @@ export default function AidlcPage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead fullWidth eyebrow="Core capabilities" heading="Every discipline enterprise AI demands, in one repeatable model" />
           <div className="eq-grid">
@@ -130,7 +130,7 @@ export default function AidlcPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             heading="Deliver AI with speed, quality, and confidence."

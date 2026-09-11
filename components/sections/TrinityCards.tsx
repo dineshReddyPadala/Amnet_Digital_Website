@@ -34,7 +34,7 @@ const CARDS = [
 
 export function TrinityCards() {
   return (
-    <div className="relative -mt-[2px] bg-white pt-8 pb-6 mobile:pt-3">
+    <div className="relative bg-white py-16 mobile:py-12">
       <Wrap>
         <div className="eq-grid">
           {CARDS.map((card) => (

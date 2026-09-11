@@ -100,7 +100,7 @@ export default function AgentFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -172,7 +172,7 @@ export default function AgentFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             heading="Move beyond insights. Start driving intelligent action."

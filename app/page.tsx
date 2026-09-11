@@ -48,7 +48,7 @@ export default function HomePage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             center
@@ -60,7 +60,7 @@ export default function HomePage() {
         </Wrap>
       </Section>
 
-      <Section tight className="!pt-16 !pb-[30px]">
+      <Section tight className="!pt-0 !pb-[30px]">
         <Wrap>
           <Reveal className="font-body text-xs tracking-[0.2em] text-center mb-[26px] text-[#707B8E]">
             DATA · AI · DECISION INTELLIGENCE · PRODUCT ENGINEERING · CLOUD · DEVOPS · AUTOMATION QA
@@ -125,7 +125,7 @@ export default function HomePage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             fullWidth
