@@ -50,7 +50,12 @@ export default function HomePage() {
 
       <Section>
         <Wrap>
-          <SectionHead center eyebrow="The Amnet Advantage" heading="AI-first DNA. Full-stack execution. Startup speed." />
+          <SectionHead
+            center
+            eyebrow="Why CTOs choose AMNET DIGITAL?"
+            heading="The Amnet Advantage"
+            lede="AI-first DNA. Full-stack execution. Startup speed."
+          />
           <WhyAmnetGrid />
         </Wrap>
       </Section>
