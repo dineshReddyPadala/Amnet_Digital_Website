@@ -38,20 +38,24 @@ export function Hero() {
           <i className="hero-badge-dot w-[7px] h-[7px] rounded-full bg-gold shadow-[0_0_12px_#6D5CFF]" />
           The AI Enterprise, Engineered
         </span>
-        <h1 className="text-[clamp(38px,5.4vw,56px)] font-extrabold my-[26px] mt-[26px] mb-5">
+        <h1 className="text-[clamp(38px,5.4vw,64px)] font-extrabold my-[26px] mt-[26px] mb-3">
           From enterprise data to <span className="grad-text">autonomous business outcomes</span>
         </h1>
-        <p className="text-[clamp(17px,1.5vw,18px)] text-muted mx-auto mb-9 max-w-[56ch]">
+        <h2 className="text-[clamp(19px,1.9vw,24px)] font-semibold leading-[1.4] tracking-[-0.015em] text-ink mx-auto mb-5 max-w-[46ch]">
+          We help enterprises turn fragmented data, applications and workflows into intelligent systems
+          that predict, decide and act — powered by Data, AI and Agentic Automation.
+        </h2>
+        <p className="text-[clamp(17px,1.5vw,20px)] text-muted mx-auto mb-9 max-w-[56ch]">
           Most AI initiatives stall at insights. Amnet Digital closes the loop — Amnet Data Foundry builds trusted,
           AI-ready data; Amnet Agent Foundry turns it into decisions and actions; AIDLC delivers it all with
           mission-critical engineering rigor.
         </p>
         <div className="flex gap-4 justify-center flex-wrap mb-[26px]">
-          <Button href="/contact" variant="molten" arrow>
-            Talk to an AI Expert
+          <Button href="/services" variant="molten" arrow>
+            Explore Our AI Solutions
           </Button>
-          <Button href="/case-studies" variant="ghost">
-            See the Outcomes
+          <Button href="/contact" variant="ghost">
+            Book an AI Strategy Session
           </Button>
         </div>
         <span className="font-body text-xs text-[#62666B] tracking-[0.08em]">

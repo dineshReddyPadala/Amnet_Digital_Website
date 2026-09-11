@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import { useToast } from '@/components/ui/ToastProvider';
 
 const SERVICE_OPTIONS = [
@@ -30,8 +30,9 @@ const labelClass = 'block font-body text-[11.5px] tracking-[0.14em] uppercase te
 export function ContactForm() {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = formRef.current;
     if (!form) return;
@@ -39,14 +40,50 @@ export function ContactForm() {
       form.reportValidity();
       return;
     }
-    const nameInput = form.elements.namedItem('name') as HTMLInputElement;
-    const firstName = nameInput.value.split(' ')[0] || 'there';
-    showToast(
-      <>
-        Thanks, <b>{firstName}</b> — an Amnet architect will reach out within one business day.
-      </>,
-    );
-    form.reset();
+
+    const data = new FormData(form);
+    const firstName = (data.get('name') as string).split(' ')[0] || 'there';
+    const apiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL;
+
+    if (!apiUrl) {
+      // Not configured yet (e.g. local dev without the Lambda deployed) —
+      // fail loudly instead of pretending to have sent anything.
+      showToast('Something went wrong — please email us directly instead.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          company: data.get('company'),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          title: data.get('title'),
+          service: data.get('service'),
+          message: data.get('message'),
+          // Honeypot: invisible to real visitors (see the field below).
+          // A filled value tells the backend to silently drop the submission.
+          website: data.get('website'),
+        }),
+      });
+
+      if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
+
+      showToast(
+        <>
+          Thanks, <b>{firstName}</b> — an Amnet architect will reach out within one business day.
+        </>,
+      );
+      form.reset();
+    } catch {
+      showToast('Something went wrong sending your message — please email us directly instead.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -106,12 +143,23 @@ export function ContactForm() {
           className={`${fieldClass} min-h-[130px] resize-y`}
         />
       </div>
+
+      {/* Honeypot — real visitors never see this field. Positioned off-screen
+          rather than display:none, since some bots specifically skip
+          display:none fields. Backend silently drops the submission if this
+          is filled in. */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="cf-website">Website</label>
+        <input id="cf-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="col-span-2 mobile:col-span-1">
         <button
           type="submit"
-          className="inline-flex items-center gap-2.5 rounded-full font-semibold font-body py-[15px] px-7 text-[14px] bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform group"
+          disabled={submitting}
+          className="inline-flex items-center gap-2.5 rounded-full font-semibold font-display py-[15px] px-7 text-[15.5px] bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform group disabled:opacity-60 disabled:pointer-events-none"
         >
-          Send Message
+          {submitting ? 'Sending…' : 'Send Message'}
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none" className="transition-transform group-hover:translate-x-1">
             <path d="M10 1l5 5-5 5M15 6H1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
