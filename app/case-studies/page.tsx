@@ -32,7 +32,7 @@ export default function CaseStudiesPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             heading="Your challenge could be the next story here."

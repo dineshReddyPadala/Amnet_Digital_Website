@@ -104,7 +104,7 @@ export default function DataFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
             fullWidth
@@ -183,7 +183,7 @@ export default function DataFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
             fullWidth

@@ -134,7 +134,7 @@ export default function CareersPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand heading="Ready to build the autonomous enterprise?" paragraph="Send us your story. We hire for curiosity, ownership, and craft.">
             <Button href="/contact" variant="molten">
