@@ -25,7 +25,7 @@ const SERVICE_OPTIONS = [
 
 const fieldClass =
   'w-full py-[14px] px-4 rounded-xl border-[1.5px] border-line bg-paper font-body text-[15px] text-ink transition-colors focus:outline-none focus:border-gold focus:shadow-[0_0_0_4px_rgba(109,92,255,0.15)]';
-const labelClass = 'block font-mono text-[11.5px] tracking-[0.14em] uppercase text-muted mb-[7px]';
+const labelClass = 'block font-body text-[11.5px] tracking-[0.14em] uppercase text-muted mb-[7px]';
 
 export function ContactForm() {
   const { showToast } = useToast();

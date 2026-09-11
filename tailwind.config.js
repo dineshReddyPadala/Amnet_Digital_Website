@@ -33,7 +33,7 @@ module.exports = {
         paper: '#FFFFFF',
         ink: '#101826',
         muted: '#5B6472',
-        'muted-2': '#8B93A1',
+        'muted-2': '#62666B',
         bronze: '#5646E5',
         silver: '#98A6B3',
         gold: '#6D5CFF',
@@ -44,7 +44,9 @@ module.exports = {
         'line-dark': 'rgba(255,255,255,.10)',
       },
       fontFamily: {
+        // Headers (h1–h4): Sora — same on every page
         display: ['var(--font-sora)', 'sans-serif'],
+        // Body copy (p, span, button): Figtree — same on every page
         body: ['var(--font-figtree)', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'monospace'],
       },

@@ -14,11 +14,9 @@ export function DecorativeArtPanel({ background, kicker, heading, sub }: Decorat
       style={{ background }}
     >
       <div className="text-center p-10">
-        <div className="font-mono text-xs tracking-[0.2em] text-[#8FA0B8]">{kicker}</div>
-        <div className="font-display font-extrabold text-[clamp(22px,2.6vw,34px)] text-white my-3.5 leading-[1.5]">
-          {heading}
-        </div>
-        <p className="text-[#A9B5C8] text-[15px]">{sub}</p>
+        <span className="text-xs tracking-[0.2em] text-[#8FA0B8] uppercase">{kicker}</span>
+        <h3 className="font-extrabold text-[clamp(22px,2.6vw,34px)] text-white my-3.5 leading-[1.5]">{heading}</h3>
+        <p className="text-[#A9B5C8] text-[14px]">{sub}</p>
       </div>
     </div>
   );

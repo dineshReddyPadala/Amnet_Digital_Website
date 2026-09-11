@@ -17,65 +17,70 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
+    icon: '✦',
     title: 'AI & Machine Learning',
     items: [
-      'Conversational & Generative AI',
-      'Agentic frameworks & orchestration',
-      'OCR / intelligent document processing',
-      'NLP/NLU — summarization, sentiment',
-      'Computer vision & anomaly detection',
-      'Search, recommendations, Customer 360',
-      'Forecasting & supply-chain optimization',
+      'Generative AI',
+      'Agentic AI',
+      'Document AI / OCR',
+      'NLP & sentiment',
+      'Search & recommendations',
+      'Forecasting',
     ],
   },
   {
+    icon: '◈',
     title: 'Data Engineering & Analytics',
     items: [
-      'Big data & lakehouse solutions',
-      'Data management & governance',
-      'BI, ETL & data visualization',
-      'Marketing, pricing & clickstream analytics',
-      'Sales channel & fraud analytics',
+      'Lakehouse & big data',
+      'Data governance',
+      'BI & visualization',
+      'Marketing analytics',
+      'Fraud analytics',
     ],
   },
   {
+    icon: '⬡',
     title: 'Product Development',
     items: [
-      'UX & design thinking',
-      'Web & mobile application engineering',
-      'Architecture & infrastructure',
-      'AIMLOps & payment integrations',
-      'MVPs & POCs in weeks, not quarters',
+      'UX & design',
+      'Web & mobile apps',
+      'Architecture',
+      'AIMLOps',
+      'MVP & POC delivery',
     ],
   },
   {
+    icon: '☁',
     title: 'Cloud Services',
     items: [
-      'Cloud consulting & assessment',
-      'Migration & deployment',
-      'Cloud data management as a service',
-      'Serverless computing',
-      'Security assessment & planning',
+      'Cloud consulting',
+      'Migration',
+      'Data management',
+      'Serverless',
+      'Cloud security',
     ],
   },
   {
+    icon: '⚙',
     title: 'DevOps & Automation QA',
     items: [
-      'DevOps & continuous delivery',
-      'Test automation at scale',
-      'Cloud performance & security testing',
-      'Accessibility & firmware testing',
-      'AI-system evaluation (AIDLC)',
+      'CI/CD',
+      'Test automation',
+      'Performance testing',
+      'Security testing',
+      'AI evaluation',
     ],
   },
   {
+    icon: '◎',
     title: 'Strategy & Consulting',
     items: [
-      'Digital, data & AI strategy',
-      'Business process evolution',
-      'Product development strategy',
-      'Technology strategy & security',
-      'Scalable operations & service desks',
+      'AI strategy',
+      'Process redesign',
+      'Product strategy',
+      'Tech & security',
+      'Managed operations',
     ],
   },
 ];
@@ -84,6 +89,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
         eyebrow="End-to-end capability"
         heading={
@@ -98,21 +104,28 @@ export default function ServicesPage() {
         </Button>
       </PageHero>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
-            {SERVICES.map((s) => (
-              <Reveal key={s.title}>
-                <ServiceCard title={s.title} items={s.items} />
+          <SectionHead
+            fullWidth
+            eyebrow="What we deliver"
+            heading="Six practice areas. One embedded team."
+            lede="Every engagement draws from the same stack — AI, data, product, cloud, quality, and strategy — so delivery stays coherent from first workshop to production."
+          />
+          <div className="eq-grid">
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.title} asChild>
+                <ServiceCard title={s.title} items={s.items} icon={s.icon} index={i + 1} />
               </Reveal>
             ))}
           </div>
         </Wrap>
       </Section>
 
-      <Section tight className="bg-porcelain">
+      <Section tight className="bg-porcelain !pt-0">
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="How it fits together"
             heading="Fifty competencies, one architecture"
             lede="Our services aren't a menu — they're layers of a single delivery stack, with DevOps, quality, and strategy engineered across every layer."
@@ -128,8 +141,9 @@ export default function ServicesPage() {
       <Section dark tight>
         <Wrap>
           <SectionHead
+            fullWidth
             center
-            eyebrow="The Amnet ADvantage"
+            eyebrow="The Amnet Advantage"
             heading="Ideate → Build → Deploy → Maintain → Support"
             lede="Complete ownership of the entire lifecycle — accelerating delivery and driving continuous value as your trusted technology partner. Enterprise-grade solutions with startup speed and innovation."
           />

@@ -22,14 +22,12 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
     rest: c,
   }));
 
-  const pipeSteps: [string, string][] = industry.pipe.map((p, i) => [
-    p.length > 26 ? `${p.slice(0, 26)}…` : p,
-    `Step ${i + 1}`,
-  ]);
+  const pipeSteps: [string, string][] = industry.pipe.map((p, i) => [p, `Step ${i + 1}`]);
 
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: industry.name }]}
         eyebrow={industry.eyebrow}
         heading={industry.title}
@@ -42,7 +40,7 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
 
       <Section>
         <Wrap>
-          <SectionHead eyebrow="Industry challenges" heading="What's holding growth back" />
+          <SectionHead fullWidth eyebrow="Industry challenges" heading="What's holding growth back" />
           <PainList light items={challengeItems} className="grid-cols-2 tablet:grid-cols-1 grid" />
         </Wrap>
       </Section>
@@ -50,14 +48,15 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
       <Section dark>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="How intelligence translates to growth"
             heading="Three engines, tuned to your domain"
             lede={industry.growth}
           />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid">
             {industry.engines.map((engine, i) => (
-              <Reveal key={engine.title}>
-                <Card icon={ENGINE_ICONS[i]} title={`${engine.title} Engine`}>
+              <Reveal key={engine.title} asChild>
+                <Card equal icon={ENGINE_ICONS[i]} title={`${engine.title} Engine`}>
                   <p>{engine.body}</p>
                 </Card>
               </Reveal>
@@ -66,11 +65,19 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
-          <SectionHead eyebrow="How it works" heading="From your data to your outcomes" />
-          <div className="bg-carbon rounded py-7 px-7">
-            <PipelineSteps steps={pipeSteps} />
+          <SectionHead fullWidth eyebrow="How it works" heading="From your data to your outcomes" />
+          <div className="relative overflow-hidden rounded-[22px] border border-line-dark bg-carbon py-8 px-5 mobile:px-4">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-90"
+              style={{
+                background:
+                  'radial-gradient(600px 280px at 10% 0%, rgba(109,92,255,.18), transparent 55%), radial-gradient(500px 240px at 90% 100%, rgba(76,195,255,.12), transparent 50%)',
+              }}
+            />
+            <PipelineSteps className="relative z-[1]" steps={pipeSteps} />
           </div>
           <div className="grid grid-cols-2 tablet:grid-cols-1 gap-[22px] mt-14">
             <div>
@@ -95,7 +102,7 @@ export function IndustryDetailTemplate({ industry }: { industry: Industry }) {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand heading={industry.ctaHeading} paragraph={industry.ctaParagraph}>
             <Button href="/contact" variant="molten">

@@ -40,7 +40,7 @@ export function Header() {
           <li className="list-none ml-2 flex-none">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2.5 rounded-full font-semibold font-display py-2.5 px-5 text-sm bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform whitespace-nowrap"
+              className="inline-flex items-center gap-2.5 rounded-full font-semibold font-body py-2.5 px-5 text-sm bg-molten text-white shadow-[0_12px_30px_-10px_rgba(86,70,229,0.5)] hover:-translate-y-0.5 transition-transform whitespace-nowrap"
             >
               Talk to an Expert
             </Link>

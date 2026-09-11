@@ -40,7 +40,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+        fullWidth
+        crumbs={[]}
         eyebrow="Who we are"
         heading={
           <>
@@ -68,14 +69,14 @@ export default function AboutPage() {
                 move toward self-optimizing, insight-led growth.
               </p>
             </div>
-            <div className="grid grid-cols-2 mobile:grid-cols-1 gap-3.5">
-              <Reveal>
-                <Card icon="◎" title="Mission">
+            <div className="eq-grid eq-grid-2">
+              <Reveal asChild>
+                <Card equal icon="◎" title="Mission">
                   <p>Engineer the path from enterprise data to autonomous, measurable business outcomes.</p>
                 </Card>
               </Reveal>
-              <Reveal>
-                <Card icon="✦" title="Vision">
+              <Reveal asChild>
+                <Card equal icon="✦" title="Vision">
                   <p>Make every enterprise an AI enterprise — powered by trusted data and accountable AI.</p>
                 </Card>
               </Reveal>
@@ -87,10 +88,10 @@ export default function AboutPage() {
       <Section dark>
         <Wrap>
           <SectionHead center eyebrow="Our values" heading="What we refuse to compromise on" />
-          <div className="grid grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid eq-grid-4">
             {VALUES.map((v) => (
-              <Reveal key={v.title}>
-                <Card icon={v.icon} title={v.title}>
+              <Reveal key={v.title} asChild>
+                <Card equal icon={v.icon} title={v.title}>
                   <p>{v.body}</p>
                 </Card>
               </Reveal>
@@ -117,7 +118,7 @@ export default function AboutPage() {
               <Reveal>
                 <Card icon="🌍" title="Global footprint">
                   <p className="mb-3.5">Delivering around the clock from four countries:</p>
-                  <div className="font-mono text-xs flex gap-[18px] flex-wrap text-muted">
+                  <div className="font-body text-xs flex gap-[18px] flex-wrap text-muted">
                     <span>
                       <b>US</b> Austin, TX (HQ)
                     </span>
@@ -155,7 +156,7 @@ export default function AboutPage() {
             {TECH_LOGOS.map((logo) => (
               <span
                 key={logo}
-                className="font-mono text-[12.5px] tracking-[0.1em] py-3 px-[22px] rounded-full border border-line-dark bg-carbon-2 text-[#AFC0D8]"
+                className="font-body text-[12.5px] tracking-[0.1em] py-3 px-[22px] rounded-full border border-line-dark bg-carbon-2 text-[#AFC0D8]"
               >
                 {logo}
               </span>
