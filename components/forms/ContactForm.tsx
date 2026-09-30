@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { useToast } from '@/components/ui/ToastProvider';
 
 const SERVICE_OPTIONS = [
@@ -31,6 +31,15 @@ export function ContactForm() {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [service, setService] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const role = new URLSearchParams(window.location.search).get('role');
+    if (!role) return;
+    setService('Careers / Job application');
+    setMessage(`I'd like to apply for ${role}.`);
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -79,6 +88,8 @@ export function ContactForm() {
         </>,
       );
       form.reset();
+      setService('');
+      setMessage('');
     } catch {
       showToast('Something went wrong sending your message — please email us directly instead.');
     } finally {
@@ -122,7 +133,14 @@ export function ContactForm() {
         <label htmlFor="cf-svc" className={labelClass}>
           Required service *
         </label>
-        <select id="cf-svc" name="service" required defaultValue="" className={fieldClass}>
+        <select
+          id="cf-svc"
+          name="service"
+          required
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          className={fieldClass}
+        >
           <option value="" disabled>
             Select a service…
           </option>
@@ -140,6 +158,8 @@ export function ContactForm() {
           name="message"
           required
           placeholder="Tell us about your challenge, timeline, and what success looks like…"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className={`${fieldClass} min-h-[130px] resize-y`}
         />
       </div>

@@ -6,10 +6,11 @@ import { Wrap } from '@/components/ui/Wrap';
 import { SectionHead } from '@/components/ui/SectionHead';
 import { Reveal } from '@/components/ui/Reveal';
 import { CtaBand } from '@/components/ui/CtaBand';
+import { JOBS } from '@/data/jobs';
 
 export const metadata: Metadata = {
   title: 'Careers at Amnet Digital — Build the AI Enterprise',
-  description: 'Work on agentic AI in production. Explore openings across data engineering, AI engineering, quality, design, cloud and DevOps.',
+  description: 'Open roles in agentic AI, data architecture, data science, platform engineering, Java, and UX design.',
 };
 
 const PERKS = [
@@ -19,14 +20,6 @@ const PERKS = [
   { em: '🚀', title: 'Exposure that expands horizons', body: 'Hands-on cutting-edge AI and data projects, plus seminars, events, and industry summits that keep you ahead of the curve.' },
   { em: '🎈', title: 'The Amnet way', body: "We don't follow a rule book to acknowledge your personal wins and celebrations — we have our own unique ways to celebrate you." },
   { em: '🎂', title: 'SYNERGY! Our years-old tradition', body: 'Month-end cake cuttings and team rituals — yes, we believe in celebrating your inner child.' },
-];
-
-const JOBS = [
-  { title: 'Senior Data Engineer — Amnet Data Foundry', location: 'Hyderabad / Remote', experience: '5+ yrs', stack: 'Databricks · Spark · Medallion' },
-  { title: 'Agentic AI Engineer — Amnet Agent Foundry', location: 'Hyderabad', experience: '3+ yrs', stack: 'LLMs · AutoGen · LangChain' },
-  { title: 'AI Quality Engineer — AIDLC', location: 'Hyderabad / Remote', experience: '4+ yrs', stack: 'Evals · Hallucination testing · Automation' },
-  { title: 'Product Designer — Enterprise AI Platforms', location: 'Hyderabad', experience: '3+ yrs', stack: 'UX · Design systems · Data viz' },
-  { title: 'Cloud & DevOps Engineer', location: 'Hyderabad / Dubai', experience: '4+ yrs', stack: 'AWS/Azure · K8s · CI/CD' },
 ];
 
 const TESTIMONIALS = [
@@ -83,18 +76,18 @@ export default function CareersPage() {
           <SectionHead eyebrow="Current openings" heading="Find your next challenge" />
           <div className="grid gap-3.5">
             {JOBS.map((job) => (
-              <Reveal key={job.title}>
+              <Reveal key={job.slug}>
                 <div className="flex mobile:flex-col mobile:items-start items-center gap-[18px] bg-carbon-2 border border-line-dark rounded-2xl py-5 px-6 transition-transform duration-150 hover:translate-x-1.5">
                   <div>
                     <b className="text-[16.5px] text-white">{job.title}</b>
-                    <div className="text-xs text-[#8FA0B8] flex gap-4 mt-1 flex-wrap">
-                      <span>{job.location}</span>
+                    <p className="text-[14.5px] text-[#C5D0E0] mt-1.5 max-w-[68ch]">{job.summary}</p>
+                    <div className="text-xs text-[#8FA0B8] flex gap-4 mt-2 flex-wrap">
                       <span>{job.experience}</span>
-                      <span>{job.stack}</span>
+                      <span>{job.tags.join(' · ')}</span>
                     </div>
                   </div>
-                  <Button href="/contact" variant="ghost-dark" size="sm" className="ml-auto mobile:ml-0">
-                    Apply
+                  <Button href={`/careers/${job.slug}`} variant="ghost-dark" size="sm" className="ml-auto mobile:ml-0">
+                    View role →
                   </Button>
                 </div>
               </Reveal>
