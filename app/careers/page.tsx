@@ -87,7 +87,7 @@ export default function CareersPage() {
                     </div>
                   </div>
                   <Button href={`/careers/${job.slug}`} variant="ghost-dark" size="sm" className="ml-auto mobile:ml-0">
-                    View role →
+                    View role
                   </Button>
                 </div>
               </Reveal>
