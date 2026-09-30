@@ -36,10 +36,10 @@ const ITEMS = [
 
 export function WhyAmnetGrid() {
   return (
-    <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+    <div className="eq-grid">
       {ITEMS.map((item) => (
-        <Reveal key={item.title}>
-          <Card icon={item.icon} title={item.title}>
+        <Reveal key={item.title} asChild>
+          <Card equal icon={item.icon} title={item.title}>
             <p>{item.body}</p>
           </Card>
         </Reveal>

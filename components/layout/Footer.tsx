@@ -11,7 +11,7 @@ export function Footer() {
               <img src="/assets/img/amnet-logo-white.png" alt="Amnet Digital" style={{ height: 28, width: 'auto' }} />
             </Link>
             <p className="text-sm max-w-[34ch] mt-4">{SITE_TAGLINE}</p>
-            <div className="font-mono text-xs flex gap-[18px] flex-wrap text-[#7B89A0] mt-5">
+            <div className="text-xs flex gap-[18px] flex-wrap text-[#7B89A0] mt-5">
               {LOCATIONS.map((loc) => (
                 <span key={loc.code}>
                   <b className="text-gold font-medium">{loc.code}</b> {loc.name}
@@ -21,7 +21,7 @@ export function Footer() {
           </div>
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-white text-sm mb-4 font-mono tracking-[0.16em] uppercase font-medium">{col.title}</h4>
+              <h4 className="text-white text-sm mb-4 tracking-[0.16em] uppercase font-medium">{col.title}</h4>
               <ul className="list-none grid gap-2.5">
                 {col.links.map((link, i) => (
                   <li key={link.href + i}>

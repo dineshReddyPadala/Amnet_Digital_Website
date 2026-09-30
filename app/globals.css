@@ -32,10 +32,82 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-porcelain text-ink font-body antialiased;
+    @apply bg-porcelain text-ink antialiased;
+    font-family: var(--font-figtree), sans-serif;
     font-size: 17px;
     line-height: 1.65;
   }
+
+  /*
+   * One family per tag — same on every page:
+   *   headings  → Sora
+   *   body copy → Figtree
+   *   code      → IBM Plex Mono
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sora), sans-serif;
+    line-height: 1.12;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
+
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  li,
+  ul,
+  ol,
+  b,
+  strong,
+  em,
+  small,
+  i,
+  u,
+  s,
+  mark,
+  time,
+  address,
+  figcaption,
+  blockquote,
+  cite,
+  dfn,
+  abbr,
+  data,
+  q,
+  summary,
+  legend,
+  option,
+  td,
+  th,
+  caption,
+  nav,
+  footer,
+  header,
+  main,
+  section,
+  article,
+  aside {
+    font-family: var(--font-figtree), sans-serif;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre,
+  var {
+    font-family: var(--font-plex-mono), monospace;
+  }
+
   img {
     max-width: 100%;
     display: block;
@@ -45,17 +117,7 @@
     text-decoration: none;
   }
   button {
-    font-family: inherit;
     cursor: pointer;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-display;
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    font-weight: 700;
   }
   .dark h1,
   .dark h2,
@@ -85,13 +147,8 @@
 
   /* eyebrow label with a short gradient tick */
   .eyebrow {
-    @apply font-mono text-[12px] tracking-[0.22em] uppercase text-bronze inline-flex items-center gap-2.5 font-semibold;
-  }
-  .eyebrow::before {
-    content: '';
-    width: 26px;
-    height: 2px;
-    @apply bg-molten rounded-sm;
+    @apply text-[12px] tracking-[1px] uppercase text-bronze inline-flex items-center gap-2.5 font-semibold;
+    font-family: var(--font-figtree), sans-serif;
   }
   .dark .eyebrow {
     @apply text-gold;
@@ -115,6 +172,53 @@
       transform: none;
       transition: none;
     }
+  }
+
+  /* Equal-align card grids: CSS subgrid keeps headers & body text on shared rows */
+  .eq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 22px;
+    row-gap: 0;
+    margin-bottom: -22px;
+  }
+  .eq-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+  .eq-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 14px;
+  }
+  .eq-grid-gap-18 {
+    column-gap: 18px;
+  }
+  @media (max-width: 1020px) {
+    .eq-grid,
+    .eq-grid-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .eq-grid-stack-tablet {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 740px) {
+    .eq-grid,
+    .eq-grid-4,
+    .eq-grid-2 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .eq-card {
+    --eq-rows: 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span var(--eq-rows);
+    margin-bottom: 22px;
+    min-width: 0;
+  }
+  .eq-card-rows-3 {
+    --eq-rows: 3;
   }
 
   /* header nav dropdown */
@@ -174,9 +278,14 @@
       #fbfbfe;
   }
 
-  /* foundry line (signature homepage element) */
+  /* Override legacy arbitrary color #8B93A1 → rgb(98, 102, 107) */
+  .text-\[\#8B93A1\] {
+    --tw-text-opacity: 1;
+    color: rgb(98 102 107) !important;
+  }
   .fl-track {
     position: relative;
+    --fl-progress: 0;
   }
   .fl-track::before {
     content: '';
@@ -186,23 +295,61 @@
     top: 26px;
     height: 3px;
     border-radius: 3px;
-    background: linear-gradient(90deg, #5646e5, #6d5cff 40%, #9f8bff 55%, #7fd4ff 80%, #4cc3ff);
+    background: rgba(16, 24, 38, 0.1);
   }
   .fl-track::after {
     content: '';
     position: absolute;
     left: 4%;
-    right: 4%;
     top: 26px;
     height: 3px;
     border-radius: 3px;
-    background: linear-gradient(90deg, transparent 0 40%, rgba(255, 255, 255, 0.95) 50%, transparent 60% 100%);
-    background-size: 200% 100%;
-    animation: flow 3.2s linear infinite;
+    width: calc((100% - 8%) * var(--fl-progress, 0));
+    max-width: calc(100% - 8%);
+    background: linear-gradient(90deg, #5646e5, #6d5cff 40%, #9f8bff 55%, #7fd4ff 80%, #4cc3ff);
+    transition: width 0.55s ease;
+  }
+  .fl-step-idle .fl-dot {
+    opacity: 0.4;
+    transform: scale(0.9);
+    box-shadow: 0 0 0 4px rgba(109, 92, 255, 0.08);
+  }
+  .fl-step-idle .fl-dot-cool {
+    box-shadow: 0 0 0 4px rgba(76, 195, 255, 0.08);
+  }
+  .fl-step-active .fl-dot {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  .fl-dot-warm {
+    background: #6d5cff;
+    box-shadow:
+      0 0 0 6px rgba(109, 92, 255, 0.15),
+      0 0 18px rgba(109, 92, 255, 0.6);
+  }
+  .fl-dot-cool {
+    background: #4cc3ff;
+    box-shadow:
+      0 0 0 6px rgba(76, 195, 255, 0.15),
+      0 0 18px rgba(76, 195, 255, 0.6);
+  }
+  .fl-step-active .fl-dot-warm {
+    box-shadow:
+      0 0 0 8px rgba(109, 92, 255, 0.2),
+      0 0 22px rgba(109, 92, 255, 0.75);
+  }
+  .fl-step-active .fl-dot-cool {
+    box-shadow:
+      0 0 0 8px rgba(76, 195, 255, 0.2),
+      0 0 22px rgba(76, 195, 255, 0.75);
   }
   @media (prefers-reduced-motion: reduce) {
     .fl-track::after {
-      animation: none;
+      transition: none;
+    }
+    .fl-step-idle .fl-dot,
+    .fl-step-active .fl-dot {
+      transition: none;
     }
   }
   @media (max-width: 1020px) {
@@ -213,6 +360,12 @@
   }
 
   /* trinity + generic cards top accent */
+  .tcard {
+    border: none !important;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
   .tcard::before {
     content: '';
     position: absolute;
@@ -220,10 +373,16 @@
     left: 0;
     right: 0;
     height: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
     @apply bg-molten;
   }
   .tcard.cool::before {
     background: linear-gradient(90deg, #1e8fd5, #4cc3ff);
+  }
+  .tcard:hover::before,
+  .tcard:focus-visible::before {
+    opacity: 1;
   }
 
   /* industry hover-reveal cards */
@@ -289,25 +448,25 @@
 
   /* pipeline connector arrows */
   .pn + .pn {
-    margin-left: 34px;
+    margin-left: 18px;
   }
   .pn + .pn::before {
     content: '';
     position: absolute;
-    left: -28px;
+    left: -14px;
     top: 50%;
-    width: 22px;
+    width: 10px;
     height: 2px;
     background: #6d5cff;
   }
   .pn + .pn::after {
     content: '';
     position: absolute;
-    left: -10px;
+    left: -8px;
     top: 50%;
     transform: translateY(-3.5px) rotate(45deg);
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid #6d5cff;
     border-right: 2px solid #6d5cff;
   }
@@ -323,7 +482,7 @@
     position: absolute;
     top: -30px;
     left: 24px;
-    @apply font-display;
+    font-family: var(--font-sora), sans-serif;
     font-size: 190px;
     color: rgba(109, 92, 255, 0.16);
     line-height: 1;
@@ -380,7 +539,7 @@
   /* foundry-flow hero visual wrapper */
   .fv-panel {
     border-radius: 26px;
-    box-shadow: 0 40px 80px -34px rgba(16, 24, 38, 0.45);
+    /* box-shadow: 0 40px 80px -34px rgba(16, 24, 38, 0.45); */
     overflow-x: auto;
     line-height: 0;
   }
@@ -404,7 +563,7 @@
     min-width: 760px;
   }
   .arch text {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-figtree), sans-serif;
   }
   .arch .bx {
     fill: #111b2e;
@@ -432,12 +591,16 @@
   .arch .sub {
     fill: #8ca0b8;
     font-size: 10.5px;
-    letter-spacing: 0.06em;
+    letter-spacing: 1px;
+  }
+  /* Home Fig.01: all diagram text white */
+  .arch-home text {
+    fill: #ffffff !important;
   }
   .arch .kicker {
     fill: #9f8bff;
     font-size: 10.5px;
-    letter-spacing: 0.22em;
+    letter-spacing: 1px;
     font-weight: 600;
   }
   .arch .kb {

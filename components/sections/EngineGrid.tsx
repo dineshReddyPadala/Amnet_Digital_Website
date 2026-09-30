@@ -39,17 +39,19 @@ const ENGINES: EngineCardData[] = [
 
 export function EngineGrid() {
   return (
-    <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+    <div className="eq-grid">
       {ENGINES.map((engine) => (
-        <Reveal key={engine.num} as="div">
-          <div className="rounded-[18px] py-[34px] px-[30px] bg-paper border border-line relative flex flex-col transition-all duration-200 hover:shadow-card hover:-translate-y-1 h-full">
-            <span className="font-mono text-xs text-muted-2 tracking-[0.18em]">{engine.num}</span>
-            <h3 className="text-[21px] mt-3 mb-2.5">{engine.title}</h3>
-            <p className="text-muted text-[15px] flex-1">{engine.body}</p>
-            <div className="mt-5 pt-[18px] border-t border-dashed border-line grid gap-[7px]">
+        <Reveal key={engine.num} asChild>
+          <div className="eq-card eq-card-rows-3 rounded-[18px] py-[34px] px-[30px] bg-paper border border-line relative transition-all duration-200 hover:shadow-card hover:-translate-y-1">
+            <div>
+              <span className="text-xs text-muted-2 tracking-[0.18em] block">{engine.num}</span>
+              <h3 className="text-[19px] leading-snug mt-3 mb-2.5">{engine.title}</h3>
+            </div>
+            <p className="text-muted text-[14px]">{engine.body}</p>
+            <div className="pt-[18px] border-t border-dashed border-line grid gap-[7px]">
               {engine.impact.map(([b, rest]) => (
                 <span key={b} className="text-sm flex gap-2.5 items-baseline">
-                  <b className="font-display text-bronze text-[17px] whitespace-nowrap">{b}</b> {rest}
+                  <b className="text-bronze text-[17px] whitespace-nowrap">{b}</b> {rest}
                 </span>
               ))}
             </div>

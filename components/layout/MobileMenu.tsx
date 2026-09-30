@@ -46,7 +46,7 @@ export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: ()
               key={entry.href}
               href={entry.href}
               onClick={onNavigate}
-              className={`block py-[15px] px-1.5 font-display text-[19px] font-semibold border-b border-line ${
+              className={`block py-[15px] px-1.5 font-body text-[19px] font-semibold border-b border-line ${
                 entry.highlight ? 'text-gold' : 'text-ink'
               }`}
             >
@@ -62,7 +62,7 @@ export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: ()
               type="button"
               aria-expanded={isOpen}
               onClick={() => setOpenGroup(isOpen ? null : entry.label)}
-              className="w-full flex items-center justify-between gap-3 py-[15px] px-1.5 font-display text-[19px] font-semibold text-ink"
+              className="w-full flex items-center justify-between gap-3 py-[15px] px-1.5 font-body text-[19px] font-semibold text-ink"
             >
               {entry.label}
               <ChevronIcon open={isOpen} />

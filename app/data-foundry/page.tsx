@@ -55,6 +55,7 @@ export default function DataFoundryPage() {
   return (
     <>
       <PageHero
+        fullWidth
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Platforms' }, { label: 'Amnet Data Foundry' }]}
         eyebrow="Agentic data engineering platform"
         heading={
@@ -90,6 +91,7 @@ export default function DataFoundryPage() {
       <Section tight className="bg-porcelain">
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="Under the hood"
             heading="One agentic pipeline, from raw sources to AI-ready consumption"
             lede="Autonomous agents operate every stage — ingestion, transformation, modeling, and governance — so the architecture below builds and maintains itself."
@@ -102,17 +104,18 @@ export default function DataFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section>
+      <Section className="!pt-0">
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The problem"
             heading="&ldquo;Data isn't the problem. Trust and action are.&rdquo;"
             lede="Enterprises don't struggle with a lack of data — they struggle to make it usable, reliable, and actionable. Most data initiatives fail because they stop at data, not decisions."
           />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid">
             {PROBLEM_CARDS.map((c) => (
-              <Reveal key={c.title}>
-                <Card icon={c.icon} title={c.title}>
+              <Reveal key={c.title} asChild>
+                <Card equal icon={c.icon} title={c.title}>
                   <p>{c.body}</p>
                 </Card>
               </Reveal>
@@ -124,24 +127,24 @@ export default function DataFoundryPage() {
       <Section dark>
         <Wrap>
           <SectionHead
+            fullWidth
             eyebrow="The platform"
             heading="Autonomous agents that do the data engineering"
             lede="Amnet Data Foundry's agents continuously connect, discover, cleanse, resolve, validate, and govern — building and maintaining your Medallion architecture as your enterprise evolves."
           />
-          <div className="grid grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-[22px]">
+          <div className="eq-grid">
             {PLATFORM_CARDS.map((c) => (
-              <Reveal key={c.title}>
-                <Card icon={c.icon} title={c.title}>
+              <Reveal key={c.title} asChild>
+                <Card equal icon={c.icon} title={c.title}>
                   <p>{c.body}</p>
                 </Card>
               </Reveal>
             ))}
           </div>
           <Reveal className="mt-11">
-            <div className="grid grid-cols-4 tablet:grid-cols-2 gap-[18px]">
+            <div className="eq-grid eq-grid-4">
               {IMPACT_STATS.map(([value, label]) => (
-                <Card key={value}>
-                  <h3 className="mt-0 text-gold text-[19px]">{value}</h3>
+                <Card key={value} equal title={<span className="text-gold">{value}</span>}>
                   <p>{label}</p>
                 </Card>
               ))}
@@ -180,9 +183,10 @@ export default function DataFoundryPage() {
         </Wrap>
       </Section>
 
-      <Section tight>
+      <Section tight className="!pt-0">
         <Wrap>
           <CtaBand
+            fullWidth
             heading="From raw enterprise data to AI-ready business knowledge — in days, not months."
             paragraph="Talk to an Amnet Data Foundry architect about your current estate and see a working Medallion build against your own sample data."
           >
