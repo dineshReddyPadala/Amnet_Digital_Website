@@ -49,3 +49,25 @@ export type CaseStudy = {
 };
 
 export type CheckItem = string | { bold: string; rest: string };
+
+export type LegalSubsection = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+};
+
+export type LegalSection = {
+  id: string;
+  /** Shorter label for the "On this page" list. */
+  navLabel: string;
+  title: string;
+  paragraphs: string[];
+  subsections?: LegalSubsection[];
+};
+
+export type LegalDoc = {
+  slug: string;
+  title: string;
+  updated: string;
+  sections: LegalSection[];
+};

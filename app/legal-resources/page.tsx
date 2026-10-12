@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/Card';
 import { LEGAL_POLICIES } from '@/data/legal';
 
 export const metadata: Metadata = {
-  title: 'Legal Resources — Amnet Digital',
+  title: 'Legal Resources',
   description: 'Amnet Digital privacy policy, cookies policy and terms of use.',
 };
 
