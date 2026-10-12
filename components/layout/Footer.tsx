@@ -34,9 +34,12 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-14 pt-[26px] border-t border-line-dark flex justify-between gap-5 flex-wrap text-[13px] text-[#66748C]">
+        <div className="mt-14 pt-[26px] border-t border-line-dark grid grid-cols-[1fr_auto_1fr] mobile:grid-cols-1 items-center gap-5 text-[13px] text-[#66748C]">
           <span>© 2026 Amnet Digital. All rights reserved.</span>
-          <span>Founded 2019 · Trusted by Fortune 500 & growing companies alike</span>
+          <Link href="/legal-resources" className="hover:text-gold transition-colors">
+            Legal Resources
+          </Link>
+          <span className="justify-self-end mobile:justify-self-start">Founded 2019 · Trusted by Fortune 500 & growing companies alike</span>
         </div>
       </div>
     </footer>
