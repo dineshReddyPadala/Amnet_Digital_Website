@@ -38,7 +38,7 @@ export function LegalToc({ items }: { items: LegalTocItem[] }) {
                 onClick={() => setActive(id)}
                 aria-current={on ? 'location' : undefined}
                 className={`-ml-px block border-l-2 py-1.5 pl-4 text-[13px] leading-snug transition-colors ${
-                  on ? 'border-gold text-gold font-medium' : 'border-transparent text-muted hover:text-ink'
+                  on ? 'border-gold text-gold font-medium' : 'border-transparent text-muted hover:border-ink/20 hover:text-ink'
                 }`}
               >
                 {label}
