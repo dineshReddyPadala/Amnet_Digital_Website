@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FOOTER_COLUMNS, LOCATIONS, SITE_TAGLINE } from '@/data/site';
+import { CERTIFICATIONS, FOOTER_COLUMNS, LOCATIONS, SITE_TAGLINE } from '@/data/site';
 
 export function Footer() {
   return (
@@ -34,7 +34,14 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-14 pt-[26px] border-t border-line-dark grid grid-cols-[1fr_auto_1fr] mobile:grid-cols-1 items-center gap-5 text-[13px] text-[#66748C]">
+        <ul className="list-none mt-10 flex flex-wrap justify-center gap-4 mobile:gap-3">
+          {CERTIFICATIONS.map((cert) => (
+            <li key={cert.src} className="bg-white rounded-lg p-2.5 flex items-center justify-center h-[72px] w-[88px] mobile:p-2 mobile:h-[60px] mobile:w-[72px]">
+              <img src={cert.src} alt={cert.alt} className="max-h-full max-w-full object-contain" />
+            </li>
+          ))}
+        </ul>
+        <div className="mt-10 pt-[26px] border-t border-line-dark grid grid-cols-[1fr_auto_1fr] mobile:grid-cols-1 items-center gap-5 text-[13px] text-[#66748C]">
           <span>© 2026 Amnet Digital. All rights reserved.</span>
           <Link href="/legal-resources" className="hover:text-gold transition-colors">
             Legal Resources
