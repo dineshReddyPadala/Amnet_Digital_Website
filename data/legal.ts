@@ -22,11 +22,11 @@ export const LEGAL_POLICIES: LegalPolicy[] = [
     href: '/legal-resources/privacy-policy',
   },
   {
-    title: 'Cookies Policy',
+    title: 'Cookie Policy',
     updated: 'Last updated on January 2023',
     excerpt:
       'A cookie is a small text file that is stored on your computer or another internet-connected device in order to identify your browser, provide analytics...',
-    href: '/legal-resources/cookies-policy',
+    href: '/legal-resources/cookie-policy',
   },
   {
     title: 'Terms Of Use',
