@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import type { LegalBlock, LegalDoc } from '@/lib/types';
 import { Wrap } from '@/components/ui/Wrap';
 import { LegalToc } from '@/components/legal/LegalToc';
+import { LegalTitleBand } from '@/components/legal/LegalTitleBand';
 
 // Emails, and URLs starting with http(s):// or www. (a trailing full stop or comma stays text).
 const LINKABLE = /([\w.+-]+@[\w-]+\.[\w.]*\w|(?:https?:\/\/|www\.)[^\s]*[^\s.,)])/g;
@@ -206,12 +207,7 @@ function Block({ block }: { block: LegalBlock }) {
 export function LegalDocTemplate({ doc }: { doc: LegalDoc }) {
   return (
     <>
-      <div className="bg-gold/[0.06] border-b border-line">
-        <Wrap className="py-[72px] mobile:py-12">
-          <h1 className="text-[44px] mobile:text-[32px] leading-tight font-semibold">{doc.title}</h1>
-          <p className="mt-3 text-[15px] font-medium text-gold">{doc.updated}</p>
-        </Wrap>
-      </div>
+      <LegalTitleBand title={doc.title} updated={doc.updated} />
 
       <Wrap className="py-20 mobile:py-12 grid grid-cols-[220px_minmax(0,1fr)] tablet:grid-cols-1 gap-16">
         <aside className="tablet:hidden">
