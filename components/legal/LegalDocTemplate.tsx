@@ -14,10 +14,9 @@ function linkHref(text: string) {
   return text.startsWith('http') ? text : `https://${text}`;
 }
 
-/** A policy paragraph; email addresses and URLs in the text become links. */
-function Paragraph({ text }: { text: string }) {
+function Linked({ text }: { text: string }) {
   return (
-    <p className="text-[16px] leading-[1.5] text-ink/80">
+    <>
       {text.split(LINKABLE).map((part, i) => {
         if (i % 2 === 0) return <Fragment key={i}>{part}</Fragment>;
         const href = linkHref(part);
@@ -33,6 +32,31 @@ function Paragraph({ text }: { text: string }) {
           </a>
         );
       })}
+    </>
+  );
+}
+
+/** Inline policy text: **text** is bold; email addresses and URLs become links. */
+function Inline({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-semibold text-ink">
+            {part}
+          </strong>
+        ) : (
+          <Linked key={i} text={part} />
+        ),
+      )}
+    </>
+  );
+}
+
+function Paragraph({ text }: { text: string }) {
+  return (
+    <p className="text-[16px] leading-[1.5] text-ink/80">
+      <Inline text={text} />
     </p>
   );
 }
@@ -47,6 +71,26 @@ function Block({ block }: { block: LegalBlock }) {
           <span aria-hidden className="w-2 h-2 shrink-0 rounded-full bg-gold" />
           {block.text}
         </h3>
+      );
+
+    case 'lead':
+      return <p className="pt-1 text-[16px] leading-[1.5] font-semibold text-ink">{block.text}</p>;
+
+    case 'list':
+      return (
+        <ul className="list-none grid gap-2.5">
+          {block.items.map((item) => (
+            <li key={item.marker} className="flex gap-3 text-[16px] leading-[1.5] text-ink/80">
+              <span aria-hidden className="w-5 shrink-0 font-medium text-gold">
+                {item.marker}
+              </span>
+              <span className="min-w-0">
+                <span className="sr-only">{item.marker} </span>
+                <Inline text={item.text} />
+              </span>
+            </li>
+          ))}
+        </ul>
       );
 
     case 'subsections':

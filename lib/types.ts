@@ -50,11 +50,18 @@ export type CaseStudy = {
 
 export type CheckItem = string | { bold: string; rest: string };
 
-/** One piece of a legal document section. A plain string is a paragraph; emails and URLs in it become links. */
+/**
+ * One piece of a legal document section. A plain string is a paragraph: emails and URLs in it become links,
+ * and **text** is bold.
+ */
 export type LegalBlock =
   | string
   /** Heading with a bullet dot, inside a section. */
   | { type: 'subheading'; text: string }
+  /** Bold lead-in line, e.g. introducing a list. */
+  | { type: 'lead'; text: string }
+  /** List with written markers ("a)", "b)"); item text is inline like a paragraph. */
+  | { type: 'list'; items: { marker: string; text: string }[] }
   /** Titled subsections grouped behind a left rule. */
   | { type: 'subsections'; items: { id: string; title: string; blocks: LegalBlock[] }[] }
   /** Tinted box of external links in two columns. */

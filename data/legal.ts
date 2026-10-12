@@ -1,9 +1,10 @@
 import type { LegalDoc } from '@/lib/types';
 import { PRIVACY_POLICY } from '@/data/legalDocs/privacyPolicy';
 import { COOKIE_POLICY } from '@/data/legalDocs/cookiePolicy';
+import { TERMS_OF_USE } from '@/data/legalDocs/termsOfUse';
 
 /** Full documents rendered at /legal-resources/[slug]. */
-export const LEGAL_DOCS: LegalDoc[] = [PRIVACY_POLICY, COOKIE_POLICY];
+export const LEGAL_DOCS: LegalDoc[] = [PRIVACY_POLICY, COOKIE_POLICY, TERMS_OF_USE];
 
 export type LegalPolicy = {
   title: string;
