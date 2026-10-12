@@ -49,3 +49,10 @@ export const FOOTER_COLUMNS = [
 
 export const SITE_TAGLINE =
   'From enterprise data to autonomous business outcomes — trusted data, intelligent agents, and engineered AI delivery.';
+
+export const CERTIFICATIONS = [
+  { src: '/assets/img/certifications/iso-27001.png', alt: 'ISO 27001 Information Security certified' },
+  { src: '/assets/img/certifications/iso-27701.png', alt: 'ISO 27701 certified' },
+  { src: '/assets/img/certifications/iso-9001.png', alt: 'ISO 9001 certified company' },
+  { src: '/assets/img/certifications/soc-2.png', alt: 'AICPA SOC 2' },
+];
