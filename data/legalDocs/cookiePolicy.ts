@@ -39,7 +39,7 @@ const CATEGORIES: LegalBlock[] = [
 export const COOKIE_POLICY: LegalDoc = {
   slug: 'cookie-policy',
   title: 'Cookie Policy',
-  updated: 'Last updated January 2023',
+  updated: 'Last updated September 2026',
   sections: [
     {
       id: 'what-is-a-cookie',

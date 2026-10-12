@@ -4,7 +4,7 @@ import type { LegalDoc } from '@/lib/types';
 export const PRIVACY_POLICY: LegalDoc = {
   slug: 'privacy-policy',
   title: 'Privacy Policy',
-  updated: 'Last updated: January 2023',
+  updated: 'Last updated: September 2026',
   sections: [
     {
       id: 'commitment',
