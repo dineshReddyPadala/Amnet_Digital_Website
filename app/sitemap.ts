@@ -16,6 +16,7 @@ const STATIC_ROUTES = [
   '/about',
   '/careers',
   '/contact',
+  '/legal-resources',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
