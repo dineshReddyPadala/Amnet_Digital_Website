@@ -11,7 +11,7 @@ type CtaBandProps = {
 export function CtaBand({ heading, paragraph, children, fullWidth = false }: CtaBandProps) {
   return (
     <Reveal
-      className="cta-band relative overflow-hidden flex items-center gap-10 justify-between flex-wrap text-white rounded-[26px] border border-line-dark py-16 px-14 mobile:py-11 mobile:px-7"
+      className="cta-band relative isolate overflow-hidden flex items-center gap-10 justify-between flex-wrap text-white rounded-[26px] border border-line-dark py-16 px-14 mobile:py-11 mobile:px-7"
       as="div"
     >
       <div

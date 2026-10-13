@@ -71,13 +71,20 @@ export type SolutionLayer = {
 
 export type ImpactStat = {
   icon: CaseIconName;
-  value: number;
-  suffix: string;
+  /** A number counts up (with `suffix`); a word shows as is. */
+  value: number | string;
+  suffix?: string;
   label: string;
 };
 
 export type CaseStudyDetail = {
   slug: string;
+  /** Title tag; the root layout appends " | Amnet Digital". */
+  seoTitle: string;
+  metaDescription: string;
+  /** Last item of the BreadcrumbList structured data (Home > Case Studies > this). */
+  breadcrumbName: string;
+  /** The page's H1: the case-study PDF's headline. */
   heroTitle: string;
   heroLede: string;
   heroImage?: string;
@@ -91,6 +98,10 @@ export type CaseStudyDetail = {
   impact: ImpactStat[];
   insight: string;
   insightImage?: string;
+  /** H2 overrides; the section nav keeps its short labels. Default to "Challenges", "The Solution", "Business Impact". */
+  headings?: { challenges?: string; solution?: string; impact?: string };
+  /** Slugs of related Case Studies, shown first in "Recent case studies"; the newest landing cards fill the rest. */
+  related?: string[];
 };
 
 export type CheckItem = string | { bold: string; rest: string };
