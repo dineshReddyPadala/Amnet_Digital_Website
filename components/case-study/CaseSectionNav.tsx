@@ -1,16 +1,32 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export type CaseSection = { id: string; label: string };
 
-/** Sticky left-hand section nav; the active item follows the section in the middle of the viewport. */
+/** Quiet time after the last scroll event that counts as the click's smooth scroll having ended. */
+const SCROLL_SETTLE_MS = 150;
+
+/**
+ * Sticky left-hand section nav; the active item follows the section in the middle of the viewport.
+ * A clicked item stays active while the page smooth-scrolls to it, so sections passed on the way don't flash active.
+ */
 export function CaseSectionNav({ sections }: { sections: CaseSection[] }) {
   const [active, setActive] = useState(sections[0]?.id);
+  const clickScrolling = useRef(false);
+  const settleTimer = useRef<number>();
+
+  const settleSoon = () => {
+    window.clearTimeout(settleTimer.current);
+    settleTimer.current = window.setTimeout(() => {
+      clickScrolling.current = false;
+    }, SCROLL_SETTLE_MS);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (clickScrolling.current) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
@@ -21,7 +37,15 @@ export function CaseSectionNav({ sections }: { sections: CaseSection[] }) {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
-    return () => observer.disconnect();
+    const onScroll = () => {
+      if (clickScrolling.current) settleSoon();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.clearTimeout(settleTimer.current);
+    };
   }, [sections]);
 
   return (
@@ -33,7 +57,11 @@ export function CaseSectionNav({ sections }: { sections: CaseSection[] }) {
             <li key={id}>
               <a
                 href={`#${id}`}
-                onClick={() => setActive(id)}
+                onClick={() => {
+                  clickScrolling.current = true;
+                  settleSoon();
+                  setActive(id);
+                }}
                 aria-current={on ? 'true' : undefined}
                 className={`flex items-center gap-3 py-3 px-4 text-[13px] transition-colors ${
                   on ? 'bg-molten text-white' : 'text-[#9AA0AA] hover:text-ink'
