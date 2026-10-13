@@ -23,11 +23,10 @@ export default function CaseStudiesV2Page() {
         heading="Case studies"
         lede="Explore how we solve real business challenges through innovative digital and AI-driven solutions, delivering measurable impact across industries."
         image="/assets/img/case-studies/landing-hero.jpg"
-        secondaryAction={{ label: 'Read our insights', href: '#insights' }}
       />
 
       <div className="max-w-[1440px] mx-auto px-[85px] pb-24 tablet:px-7">
-        <h2 id="insights" className="text-[clamp(28px,2.9vw,41px)] font-semibold leading-tight tracking-[-0.5px] text-ink max-w-[1000px] pt-16 scroll-mt-20">
+        <h2 className="text-[clamp(28px,2.9vw,41px)] font-semibold leading-tight tracking-[-0.5px] text-ink max-w-[1000px] pt-16">
           Gain insights from our experts on the latest trends and innovations in your industry
         </h2>
 

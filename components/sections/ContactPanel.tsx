@@ -10,10 +10,10 @@ export function ContactPanel() {
           Are you ready to become a digital-first organization?
         </p>
         <p className="text-[12px] leading-[1.5] text-white/80 mt-12 max-w-[330px]">
-          Amnet Digital is a global AI and data solutions company that enables enterprises to accelerate growth through
-          autonomous intelligence, advanced analytics, and agentic AI. By combining deep domain expertise with
-          cutting-edge technology, Amnet helps organizations leverage data into implementable insights and helps create
-          real and scalable business impact.
+          Amnet Digital is an AI and data-driven technology partner helping enterprises turn data and emerging
+          technologies into measurable business outcomes. We bring together Data Engineering, Generative AI, Agentic AI,
+          Advanced Analytics, Digital Engineering, Cloud and Intelligent Automation to build trusted data foundations
+          and secure, scalable, production-ready enterprise solutions.
         </p>
       </div>
       <div className="bg-[#F4F4F7] px-20 py-14 tablet:px-7">
