@@ -1,7 +1,7 @@
 import type { CaseStudyTeaser } from '@/lib/types';
 
 /**
- * Cards on the /case-studies-v2 landing page, one per case-study PDF: the PDF's name is the title, its headline is the
+ * Cards on the /case-studies landing page, one per case-study PDF: the PDF's name is the title, its headline is the
  * teaser and the first two "Solution & Approach" pillars are the tags. Photos are still the Magic Patterns placeholders.
  * Every card links to its /case-studies/[slug] page. The detail pages' "Recent case studies" also draw from these cards.
  */

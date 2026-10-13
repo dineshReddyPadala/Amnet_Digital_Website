@@ -24,7 +24,7 @@ const SECTIONS: CaseSection[] = [
 /** Full-width rows below the story (recent cases, CTA). */
 const WIDE = 'max-w-[1440px] mx-auto tablet:px-7';
 
-/** Two /case-studies-v2 cards other than this case: its `related` cases first, then the newest. */
+/** Two /case-studies cards other than this case: its `related` cases first, then the newest. */
 function relatedCards(detail: CaseStudyDetail): CaseStudyTeaser[] {
   const hrefOf = (slug: string) => `/case-studies/${slug}`;
   const others = ALL_CASE_CARDS.filter((c) => c.href !== hrefOf(detail.slug));
@@ -112,7 +112,7 @@ export function CaseStudyDetailTemplate({ detail }: { detail: CaseStudyDetail })
         <div className="flex items-center justify-between gap-4">
           <h2 className="font-body text-[22px] font-normal tracking-normal text-ink">Recent case studies</h2>
           <Link
-            href="/case-studies-v2"
+            href="/case-studies"
             className="border border-bronze rounded-[4px] py-2 px-4 text-[14px] font-medium text-ink transition-colors hover:bg-bronze hover:text-white"
           >
             View All

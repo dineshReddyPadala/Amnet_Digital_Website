@@ -1,9 +1,9 @@
 import type { CaseStudy } from '@/lib/types';
 
 /**
- * Case studies for /case-studies-v2 and the /case-studies/[slug] detail pages.
+ * Case studies for /case-studies and the /case-studies/[slug] detail pages.
  * Each gets a detail page once it has a `detail`. The landing page's cards come from data/caseStudiesLanding.ts.
- * (`CASES` in data/cases.ts still feeds the v1 /case-studies page and the home carousel until cutover.)
+ * (`CASES` in data/cases.ts still feeds the home carousel.)
  */
 export const CASE_STUDIES: CaseStudy[] = [
   {
