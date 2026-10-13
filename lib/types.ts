@@ -77,6 +77,8 @@ export type ImpactStat = {
   label: string;
 };
 
+export type ServiceLink = { label: string; href: string };
+
 export type CaseStudyDetail = {
   slug: string;
   /** Title tag; the root layout appends " | Amnet Digital". */
@@ -84,7 +86,7 @@ export type CaseStudyDetail = {
   metaDescription: string;
   /** Last item of the BreadcrumbList structured data (Home > Case Studies > this). */
   breadcrumbName: string;
-  /** The page's H1: the case-study PDF's headline. */
+  /** The page's H1, from the SEO brief. */
   heroTitle: string;
   heroLede: string;
   heroImage?: string;
@@ -98,8 +100,13 @@ export type CaseStudyDetail = {
   impact: ImpactStat[];
   insight: string;
   insightImage?: string;
-  /** H2 overrides; the section nav keeps its short labels. Default to "Challenges", "The Solution", "Business Impact". */
-  headings?: { challenges?: string; solution?: string; impact?: string };
+  /**
+   * The SEO brief's H2s; the section nav keeps its short labels. `solutionDetail` (H2 #3) heads the Solution Layers,
+   * under the Solution section's own heading.
+   */
+  headings: { challenges: string; solution: string; solutionDetail: string; impact: string };
+  /** The SEO brief's suggested internal service links, shown after Business Impact. */
+  services: ServiceLink[];
   /** Slugs of related Case Studies, shown first in "Recent case studies"; the newest landing cards fill the rest. */
   related?: string[];
 };

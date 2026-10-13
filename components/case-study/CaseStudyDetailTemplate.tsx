@@ -55,7 +55,7 @@ function StorySection({
 }
 
 export function CaseStudyDetailTemplate({ detail }: { detail: CaseStudyDetail }) {
-  const headings = detail.headings ?? {};
+  const { headings } = detail;
   return (
     <div className="bg-paper">
       <PhotoHero heading={detail.heroTitle} lede={detail.heroLede} image={detail.heroImage} />
@@ -72,15 +72,16 @@ export function CaseStudyDetailTemplate({ detail }: { detail: CaseStudyDetail })
           </StorySection>
 
           <div className="bg-[#F4F4F7]">
-            <StorySection id="challenges" heading={headings.challenges ?? 'Challenges'} intro={detail.challengesIntro} className="py-14">
+            <StorySection id="challenges" heading={headings.challenges} intro={detail.challengesIntro} className="py-14">
               <CaseTileGrid variant="challenge" tiles={detail.challenges} />
             </StorySection>
 
-            <StorySection id="solution" heading={headings.solution ?? 'The Solution'} intro={detail.solutionIntro} className="pt-6 pb-20">
+            <StorySection id="solution" heading={headings.solution} intro={detail.solutionIntro} className="pt-6 pb-20">
+              <h2 className="font-body text-[19px] font-medium tracking-normal text-ink mb-10">{headings.solutionDetail}</h2>
               <SolutionTimeline layers={detail.solutionLayers} />
             </StorySection>
 
-            <StorySection id="impact" heading={headings.impact ?? 'Business Impact'} intro={detail.impactIntro} className="pt-24 pb-40 mobile:pb-24">
+            <StorySection id="impact" heading={headings.impact} intro={detail.impactIntro} className="pt-24 pb-40 mobile:pb-24">
               <div className="grid grid-cols-3 mobile:grid-cols-1 gap-12 text-center">
                 {detail.impact.map((stat) => (
                   <div key={stat.label} className="flex flex-col items-center">
@@ -98,6 +99,18 @@ export function CaseStudyDetailTemplate({ detail }: { detail: CaseStudyDetail })
                   </div>
                 ))}
               </div>
+              <nav aria-label="Related services" className="flex items-center gap-3 flex-wrap mt-20 mobile:mt-14">
+                <span className="text-[15px] text-[#1F2937] mr-1">Related services:</span>
+                {detail.services.map((service) => (
+                  <Link
+                    key={service.label}
+                    href={service.href}
+                    className="border border-bronze rounded-[4px] py-2 px-4 text-[14px] font-medium text-ink transition-colors hover:bg-bronze hover:text-white"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </nav>
             </StorySection>
           </div>
 
