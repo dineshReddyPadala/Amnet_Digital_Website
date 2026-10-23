@@ -4,7 +4,7 @@ import type { LegalDoc } from '@/lib/types';
 export const TERMS_OF_USE: LegalDoc = {
   slug: 'terms-of-use',
   title: 'Terms of Use',
-  updated: 'Last updated January 2023',
+  updated: 'Last updated September 2026',
   sections: [
     {
       id: 'overview',
