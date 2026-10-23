@@ -125,6 +125,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heroTitle: 'AWS Data Lake Modernization for Enterprise Analytics',
       heroLede:
         'Consolidated 15+ global data sources into a unified platform, accelerating reporting, improving trust, and enabling scalable AI initiatives.',
+      heroImage: '/assets/img/case-studies/aws-data-lake-enterprise-analytics/hero.jpg',
       overview:
         'A trusted global B2B enterprise with decades of industry leadership, serving customers worldwide through scalable operations and efficient order fulfilment.',
       overviewStats: [
@@ -219,6 +220,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heroTitle: 'AI-Driven Property Valuation at Enterprise Scale',
       heroLede:
         'Transforming traditional, manual valuation processes into a scalable, AI-driven system that enhances accuracy, and consistency while enabling intelligent, data-backed decision-making at scale.',
+      heroImage: '/assets/img/case-studies/ai-driven-property-valuation-automation/hero.jpg',
       overview:
         'A globally established enterprise with strong scale, operational maturity, and the ability to deliver consistent value across markets.',
       overviewStats: [
@@ -312,6 +314,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heroTitle: 'AI-Powered Audit Automation for Enterprises',
       heroLede:
         'Transforming traditional, manual valuation processes into a scalable, AI-driven system that enhances accuracy, and consistency while enabling intelligent, data-backed decision-making at scale.',
+      heroImage: '/assets/img/case-studies/ai-powered-audit-automation/hero.jpg',
       overview:
         'A globally established enterprise with strong scale, operational maturity, and the ability to deliver consistent value across markets.',
       overviewStats: [
@@ -405,6 +408,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heroTitle: 'AI-Powered Enterprise Analytics Across Global Operations',
       heroLede:
         'Unifying fragmented enterprise data to enable scalable AI-driven decisions, intelligence, and operational transformation.',
+      heroImage: '/assets/img/case-studies/ai-powered-enterprise-analytics/hero.jpg',
       overview:
         'A globally recognized enterprise with strong operational scale, digital maturity, and the ability to deliver secure, data-driven services across industries.',
       overviewStats: [
@@ -499,6 +503,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heroTitle: 'AI-Powered Digital Experience Personalization',
       heroLede:
         'Leveraged AI-powered personalization, geo-contextual intelligence, and automated content workflows to enhance engagement and operational efficiency.',
+      heroImage: '/assets/img/case-studies/ai-powered-digital-experience-personalization/hero.jpg',
       overview:
         'A globally recognized digital experience platform delivering innovative solutions through a strong international presence and customer-centric approach.',
       overviewStats: [
