@@ -46,6 +46,69 @@ export type CaseStudy = {
   title: string;
   body: string;
   chips: string[];
+  /** Card image for "Recent case studies"; a placeholder renders until one is supplied. */
+  thumbnail?: string;
+  /** Only Case Studies with a detail get a /case-studies/[slug] page. */
+  detail?: CaseStudyDetail;
+};
+
+/** What a case-study card shows. `href` overrides the link derived from `detail`. */
+export type CaseStudyTeaser = Pick<CaseStudy, 'title' | 'body' | 'chips' | 'thumbnail' | 'detail'> & { href?: string };
+
+export type CaseIconName = 'globe' | 'shield' | 'shield-check' | 'building' | 'users';
+
+/** An icon + title + body card, used for Client Overview stats and Challenges. */
+export type CaseTile = {
+  icon: CaseIconName;
+  title: string;
+  body: string;
+};
+
+export type SolutionLayer = {
+  title: string;
+  body: string;
+};
+
+export type ImpactStat = {
+  icon: CaseIconName;
+  /** A number counts up (with `suffix`); a word shows as is. */
+  value: number | string;
+  suffix?: string;
+  label: string;
+};
+
+export type ServiceLink = { label: string; href: string };
+
+export type CaseStudyDetail = {
+  slug: string;
+  /** Title tag; the root layout appends " | Amnet Digital". */
+  seoTitle: string;
+  metaDescription: string;
+  /** Last item of the BreadcrumbList structured data (Home > Case Studies > this). */
+  breadcrumbName: string;
+  /** The page's H1, from the SEO brief. */
+  heroTitle: string;
+  heroLede: string;
+  heroImage?: string;
+  overview: string;
+  overviewStats: CaseTile[];
+  challengesIntro: string;
+  challenges: CaseTile[];
+  solutionIntro: string;
+  solutionLayers: SolutionLayer[];
+  impactIntro: string;
+  impact: ImpactStat[];
+  insight: string;
+  insightImage?: string;
+  /**
+   * The SEO brief's H2s; the section nav keeps its short labels. `solutionDetail` (H2 #3) heads the Solution Layers,
+   * under the Solution section's own heading.
+   */
+  headings: { challenges: string; solution: string; solutionDetail: string; impact: string };
+  /** The SEO brief's suggested internal service links, shown after Business Impact. */
+  services: ServiceLink[];
+  /** Slugs of related Case Studies, shown first in "Recent case studies"; the newest landing cards fill the rest. */
+  related?: string[];
 };
 
 export type CheckItem = string | { bold: string; rest: string };

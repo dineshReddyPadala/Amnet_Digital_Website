@@ -29,6 +29,7 @@ module.exports = {
         carbon: '#0C1322',
         'carbon-2': '#111B2E',
         'carbon-3': '#16243C',
+        midnight: '#1C1A4A', // "Let's get started" contact panel
         porcelain: '#FAFAFD',
         paper: '#FFFFFF',
         ink: '#101826',
