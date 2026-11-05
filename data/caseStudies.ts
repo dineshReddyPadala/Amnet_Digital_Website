@@ -91,11 +91,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight: "Digitization at scale isn't about speed—it's about creating usable, trusted intelligence",
       insightImage: '/assets/img/case-studies/documents-digitized-at-scale/insight.jpg',
-      headings: {
-        challenges: 'The Challenge: Paper Records and Dark Data',
-        solution: 'Secure Tracking and Chain-of-Custody Visibility',
-        impact: 'Business Impact: 100M+ Images and Lifecycle Auditability',
-      },
       related: ['ai-powered-audit-automation', 'ai-powered-enterprise-analytics'],
     },
   },
@@ -184,11 +179,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight:
         'Unified and standardized data drives clean, consistent insights with real-time global visibility—cutting reporting time from weeks to minutes',
-      headings: {
-        challenges: 'The Challenge: Fragmented ERP Data and Slow Reporting',
-        solution: 'AWS Data Lake with Bronze, Silver and Gold Layers',
-        impact: 'Business Impact: 40x Reporting, 24x Dashboards and 99% Automation',
-      },
       related: ['ai-powered-enterprise-analytics', 'ai-powered-digital-experience-personalization'],
     },
   },
@@ -276,11 +266,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         { icon: 'users', value: 90, suffix: ' %', label: 'Reduced manual effort drastically' },
       ],
       insight: 'Scalable AI-driven valuation requires a platform-first approach combining data, intelligence, and automation',
-      headings: {
-        challenges: 'Why Traditional Property Valuation Struggled to Scale',
-        solution: 'Unified Data Foundations and Geospatial Enrichment',
-        impact: 'Business Impact: 15x Faster Valuations and 90% Less Manual Effort',
-      },
       related: ['ai-powered-audit-automation', 'enterprise-document-digitization-ai'],
     },
   },
@@ -456,11 +441,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight:
         'Scalable enterprise intelligence requires a platform-first approach combining unified data, AI-powered insights, and intelligent automation',
-      headings: {
-        challenges: 'The Challenge: Siloed Data and Reporting Delays',
-        solution: 'Unified Enterprise Data Integration Architecture',
-        impact: 'Business Impact: 20x Faster Insights and 95% Automation',
-      },
       related: ['aws-data-lake-enterprise-analytics', 'enterprise-document-digitization-ai'],
     },
   },
@@ -549,11 +529,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight:
         "Next-gen digital experiences aren't built on AI alone—they're powered by the convergence of Vision AI, Generative AI, and contextual intelligence",
-      headings: {
-        challenges: 'The Challenge: Contextual Gaps and Discovery Friction',
-        solution: 'Vision AI for Visual Discovery and Understanding',
-        impact: 'Business Impact: 70% Lower Friction and 90% Content Automation',
-      },
       related: ['aws-data-lake-enterprise-analytics', 'ai-powered-enterprise-analytics'],
     },
   },
