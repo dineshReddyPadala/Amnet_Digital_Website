@@ -28,7 +28,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'Learn how enterprise document digitization converted 100M+ images into searchable digital information with AI classification and lifecycle auditability.',
       breadcrumbName: 'Data Transformation',
-      heroTitle: 'Enterprise Document Digitization with AI at Scale',
+      heroTitle: '100M+ Documents Digitized at Scale for a Global Information Leader',
       heroLede: 'Transforming legacy physical assets into actionable and secure digital intelligence.',
       heroImage: '/assets/img/case-studies/documents-digitized-at-scale/hero.jpg',
       overview:
@@ -100,10 +100,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       insight: "Digitization at scale isn't about speed—it's about creating usable, trusted intelligence",
       insightImage: '/assets/img/case-studies/documents-digitized-at-scale/insight.jpg',
       headings: {
-        challenges: 'The Challenge: Paper Records and Dark Data',
-        solution: 'Secure Tracking and Chain-of-Custody Visibility',
-        solutionDetail: 'AI Classification, Metadata Extraction and Content Routing',
-        impact: 'Business Impact: 100M+ Images and Lifecycle Auditability',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.informationManagement, SERVICE.dataAndAi],
       related: ['ai-powered-audit-automation', 'ai-powered-enterprise-analytics'],
@@ -122,7 +121,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'See how an AWS data lake unified 15+ data sources, accelerated e-commerce reporting 40x, dashboards 24x, and automated 99% of workflows.',
       breadcrumbName: 'Scalable Intelligence',
-      heroTitle: 'AWS Data Lake Modernization for Enterprise Analytics',
+      heroTitle: 'Turning Fragmented Enterprise Data into Scalable AI-Ready Business Intelligence',
       heroLede:
         'Consolidated 15+ global data sources into a unified platform, accelerating reporting, improving trust, and enabling scalable AI initiatives.',
       heroImage: '/assets/img/case-studies/aws-data-lake-enterprise-analytics/hero.jpg',
@@ -195,10 +194,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       insight:
         'Unified and standardized data drives clean, consistent insights with real-time global visibility—cutting reporting time from weeks to minutes',
       headings: {
-        challenges: 'The Challenge: Fragmented ERP Data and Slow Reporting',
-        solution: 'AWS Data Lake with Bronze, Silver and Gold Layers',
-        solutionDetail: 'Conversational Analytics and AI/ML Enablement',
-        impact: 'Business Impact: 40x Reporting, 24x Dashboards and 99% Automation',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.dataFoundry, SERVICE.dataAndAi],
       related: ['ai-powered-enterprise-analytics', 'ai-powered-digital-experience-personalization'],
@@ -217,7 +215,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'See how AI-driven property valuation and ML-powered models helped accelerate valuation 15x, scale processing 10x, and reduce manual effort by 90%.',
       breadcrumbName: 'Smart Valuation',
-      heroTitle: 'AI-Driven Property Valuation at Enterprise Scale',
+      heroTitle: '15x Faster, Scalable AI-Driven Property Valuation at Enterprise Scale',
       heroLede:
         'Transforming traditional, manual valuation processes into a scalable, AI-driven system that enhances accuracy, and consistency while enabling intelligent, data-backed decision-making at scale.',
       heroImage: '/assets/img/case-studies/ai-driven-property-valuation-automation/hero.jpg',
@@ -289,10 +287,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight: 'Scalable AI-driven valuation requires a platform-first approach combining data, intelligence, and automation',
       headings: {
-        challenges: 'Why Traditional Property Valuation Struggled to Scale',
-        solution: 'Unified Data Foundations and Geospatial Enrichment',
-        solutionDetail: 'Machine Learning Models and Scalable Valuation Processing',
-        impact: 'Business Impact: 15x Faster Valuations and 90% Less Manual Effort',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.dataAndAi, SERVICE.dataFoundry],
       related: ['ai-powered-audit-automation', 'aws-data-lake-enterprise-analytics'],
@@ -311,7 +308,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'Explore how AI-powered audit automation can streamline document processing, reduce manual review, and support more consistent enterprise audit workflows.',
       breadcrumbName: 'Smart Audit',
-      heroTitle: 'AI-Powered Audit Automation for Enterprises',
+      heroTitle: '15x Faster, Scalable AI-Driven Property Valuation at Enterprise Scale',
       heroLede:
         'Transforming traditional, manual valuation processes into a scalable, AI-driven system that enhances accuracy, and consistency while enabling intelligent, data-backed decision-making at scale.',
       heroImage: '/assets/img/case-studies/ai-powered-audit-automation/hero.jpg',
@@ -383,10 +380,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       insight: 'Scalable AI-driven valuation requires a platform-first approach combining data, intelligence, and automation',
       headings: {
-        challenges: 'The Challenge: Manual Auditing and Fragmented Workflows',
-        solution: 'Our Approach to Intelligent Audit Automation',
-        solutionDetail: 'Document Intelligence and Workflow Integration',
-        impact: 'Business Outcomes and Audit Traceability',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.informationManagement, SERVICE.dataAndAi],
       related: ['ai-driven-property-valuation-automation', 'enterprise-document-digitization-ai'],
@@ -405,7 +401,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'Discover how unified enterprise data, AI-powered insights and self-service analytics enabled 20x faster insights and 95% automation.',
       breadcrumbName: 'Enterprise Intelligence',
-      heroTitle: 'AI-Powered Enterprise Analytics Across Global Operations',
+      heroTitle: 'Delivering AI-Powered Enterprise Insights 20x Faster Across Global Business Operations',
       heroLede:
         'Unifying fragmented enterprise data to enable scalable AI-driven decisions, intelligence, and operational transformation.',
       heroImage: '/assets/img/case-studies/ai-powered-enterprise-analytics/hero.jpg',
@@ -478,10 +474,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       insight:
         'Scalable enterprise intelligence requires a platform-first approach combining unified data, AI-powered insights, and intelligent automation',
       headings: {
-        challenges: 'The Challenge: Siloed Data and Reporting Delays',
-        solution: 'Unified Enterprise Data Integration Architecture',
-        solutionDetail: 'Predictive Analytics and Self-Service Dashboards',
-        impact: 'Business Impact: 20x Faster Insights and 95% Automation',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.dataFoundry, SERVICE.dataAndAi],
       related: ['aws-data-lake-enterprise-analytics', 'enterprise-document-digitization-ai'],
@@ -500,7 +495,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metaDescription:
         'Explore how vision AI and contextual personalization reduced user friction 70%, improved accuracy 50%, and enabled 90% content automation.',
       breadcrumbName: 'AI Personalization',
-      heroTitle: 'AI-Powered Digital Experience Personalization',
+      heroTitle: 'Helping Platforms Achieve 70% Lower Friction and 3x Faster Content Creation',
       heroLede:
         'Leveraged AI-powered personalization, geo-contextual intelligence, and automated content workflows to enhance engagement and operational efficiency.',
       heroImage: '/assets/img/case-studies/ai-powered-digital-experience-personalization/hero.jpg',
@@ -573,10 +568,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       insight:
         "Next-gen digital experiences aren't built on AI alone—they're powered by the convergence of Vision AI, Generative AI, and contextual intelligence",
       headings: {
-        challenges: 'The Challenge: Contextual Gaps and Discovery Friction',
-        solution: 'Vision AI for Visual Discovery and Understanding',
-        solutionDetail: 'Location-Aware Personalization and Generative AI Content',
-        impact: 'Business Impact: 70% Lower Friction and 90% Content Automation',
+        challenges: 'Challenge',
+        solution: 'Solution & Approach',
+        impact: 'Business Impact',
       },
       services: [SERVICE.digitalEngineering, SERVICE.dataAndAi],
       related: ['aws-data-lake-enterprise-analytics', 'ai-powered-enterprise-analytics'],
