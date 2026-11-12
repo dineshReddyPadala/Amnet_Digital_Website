@@ -102,6 +102,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'AI Classification, Metadata Extraction and Content Routing',
         impact: 'Business Impact',
       },
       services: [SERVICE.informationManagement, SERVICE.dataAndAi],
@@ -196,6 +197,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'Conversational Analytics and AI/ML Enablement',
         impact: 'Business Impact',
       },
       services: [SERVICE.dataFoundry, SERVICE.dataAndAi],
@@ -289,6 +291,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'Machine Learning Models and Scalable Valuation Processing',
         impact: 'Business Impact',
       },
       services: [SERVICE.dataAndAi, SERVICE.dataFoundry],
@@ -382,6 +385,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'Document Intelligence and Workflow Integration',
         impact: 'Business Impact',
       },
       services: [SERVICE.informationManagement, SERVICE.dataAndAi],
@@ -476,6 +480,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'Predictive Analytics and Self-Service Dashboards',
         impact: 'Business Impact',
       },
       services: [SERVICE.dataFoundry, SERVICE.dataAndAi],
@@ -570,6 +575,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       headings: {
         challenges: 'Challenge',
         solution: 'Solution & Approach',
+        solutionDetail: 'Location-Aware Personalization and Generative AI Content',
         impact: 'Business Impact',
       },
       services: [SERVICE.digitalEngineering, SERVICE.dataAndAi],
