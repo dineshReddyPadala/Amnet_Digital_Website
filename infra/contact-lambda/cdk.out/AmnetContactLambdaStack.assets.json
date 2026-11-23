@@ -1,0 +1,36 @@
+{
+  "version": "54.0.0",
+  "files": {
+    "40ce50453e773bf698bbf1df096d9e7996121a36274bbe0bbef4db778a024d7a": {
+      "displayName": "ContactFormFunction/Code",
+      "source": {
+        "path": "C:\\Workspace\\amnet-site\\infra\\contact-lambda",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "807744275972-ap-south-1-f74d2eb2": {
+          "bucketName": "cdk-hnb659fds-assets-807744275972-ap-south-1",
+          "objectKey": "40ce50453e773bf698bbf1df096d9e7996121a36274bbe0bbef4db778a024d7a.zip",
+          "region": "ap-south-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::807744275972:role/cdk-hnb659fds-file-publishing-role-807744275972-ap-south-1"
+        }
+      }
+    },
+    "7d9fa46272920503ac6d8db5f15047dcd4259b70638110b73ad516940f8394a3": {
+      "displayName": "AmnetContactLambdaStack Template",
+      "source": {
+        "path": "AmnetContactLambdaStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "807744275972-ap-south-1-23886e59": {
+          "bucketName": "cdk-hnb659fds-assets-807744275972-ap-south-1",
+          "objectKey": "7d9fa46272920503ac6d8db5f15047dcd4259b70638110b73ad516940f8394a3.json",
+          "region": "ap-south-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::807744275972:role/cdk-hnb659fds-file-publishing-role-807744275972-ap-south-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

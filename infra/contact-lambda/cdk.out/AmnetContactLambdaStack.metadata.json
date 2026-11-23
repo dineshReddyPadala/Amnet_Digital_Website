@@ -1,0 +1,257 @@
+{
+  "/AmnetContactLambdaStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactWebAcl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactWebAcl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:75:20)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactWebAclAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactWebAclAssociation"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:131:5)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactApiUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactApiUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:142:5)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/SmtpSecretArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SmtpSecretArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:146:5)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactSmtpSecret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactSmtpSecret6B00B4BE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Secret2 in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:25:24)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactFormFunctionLogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactFormFunctionLogGroupB4733A4B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LogGroup2 in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:29:37)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactFormFunction/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactFormFunction3D969332"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:34:29)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactHttpApi/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactHttpApiCBB18CE3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new HttpApi2 in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:51:21)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactFormFunction/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactFormFunctionServiceRole567E8CEC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:34:29)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactHttpApi/DefaultStage/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactHttpApiDefaultStage7E08B45E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new HttpApi2 in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:51:21)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactHttpApi/POST--contact/ContactIntegration-Permission": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactHttpApiPOSTcontactContactIntegrationPermission413A68FE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Workspace\\amnet-site\\infra\\contact-lambda\\node_modules\\aws-cdk-lib\\aws-apigatewayv2\\lib\\http\\api.js:1:96 in aws-cdk-lib...",
+        "Array.map (:)",
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:59:13)"
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactHttpApi/POST--contact/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactHttpApiPOSTcontactBCECEE1B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Workspace\\amnet-site\\infra\\contact-lambda\\node_modules\\aws-cdk-lib\\aws-apigatewayv2\\lib\\http\\api.js:1:96 in aws-cdk-lib...",
+        "Array.map (:)",
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:59:13)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactFormFunction/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactFormFunctionServiceRoleDefaultPolicy1F9C7460"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantRead in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:49:16)",
+        "<anonymous> (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\bin\\app.ts:15:1)"
+      ]
+    }
+  ],
+  "/AmnetContactLambdaStack/ContactHttpApi/POST--contact/ContactIntegration/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContactHttpApiPOSTcontactContactIntegration6EABCCCD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Workspace\\amnet-site\\infra\\contact-lambda\\node_modules\\aws-cdk-lib\\aws-apigatewayv2\\lib\\http\\api.js:1:96 in aws-cdk-lib...",
+        "Array.map (:)",
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new ContactLambdaStack (C:\\Workspace\\amnet-site\\infra\\contact-lambda\\lib\\contact-lambda-stack.ts:59:13)"
+      ]
+    }
+  ]
+}
