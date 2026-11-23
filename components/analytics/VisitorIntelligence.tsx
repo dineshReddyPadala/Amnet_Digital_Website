@@ -1,12 +1,14 @@
 import Script from 'next/script';
+import { VtigerWebsense } from '@/components/analytics/VtigerWebsense';
 
-/** LeadOnion / DS360 + Zymplify visitor intelligence (intent & company identification). */
+/** Site-wide visitor intelligence: DS360, Zymplify, and Vtiger Websense (when configured). */
 const DS360_TRACKING_CODE = 'DS-17295-4424-982';
 const ZYMPLIFY_PIXEL_ID = '7f361060-48cf-4049-8b55-fd7550fb9413';
 
 export function VisitorIntelligence() {
   return (
     <>
+      <VtigerWebsense />
       <Script id="ds360-tracking-code" strategy="afterInteractive">
         {`var t_code = "${DS360_TRACKING_CODE}";`}
       </Script>
