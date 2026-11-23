@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { useToast } from '@/components/ui/ToastProvider';
+import { splitVisitorName, vtigerConvertVisitor, vtigerTrackEvent } from '@/lib/vtiger/websense';
 
 const SERVICE_OPTIONS = [
   'Amnet Data Foundry',
@@ -61,26 +62,45 @@ export function ContactForm() {
       return;
     }
 
+    const jsonBody = {
+      name: data.get('name'),
+      company: data.get('company'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      title: data.get('title'),
+      service: data.get('service'),
+      message: data.get('message'),
+      website: data.get('website'),
+    };
+
     setSubmitting(true);
     try {
       const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.get('name'),
-          company: data.get('company'),
-          email: data.get('email'),
-          phone: data.get('phone'),
-          title: data.get('title'),
-          service: data.get('service'),
-          message: data.get('message'),
-          // Honeypot: invisible to real visitors (see the field below).
-          // A filled value tells the backend to silently drop the submission.
-          website: data.get('website'),
-        }),
+        body: JSON.stringify(jsonBody),
       });
 
       if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
+
+      const vtigerLeadUrl = process.env.NEXT_PUBLIC_VTIGER_LEAD_API_URL;
+      if (vtigerLeadUrl) {
+        void fetch(vtigerLeadUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(jsonBody),
+        }).catch(() => {
+          /* Lead API is best-effort; email already succeeded */
+        });
+      }
+
+      const email = String(data.get('email') ?? '').trim();
+      const name = String(data.get('name') ?? '').trim();
+      if (email) {
+        const { last } = splitVisitorName(name);
+        vtigerConvertVisitor({ email, name: last || undefined });
+      }
+      vtigerTrackEvent('contact_form_submit');
 
       showToast(
         <>
