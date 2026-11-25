@@ -16,7 +16,7 @@ import { Wrap } from '@/components/ui/Wrap';
 import { SectionHead } from '@/components/ui/SectionHead';
 import { Reveal } from '@/components/ui/Reveal';
 import { Button } from '@/components/ui/Button';
-import { CtaBand } from '@/components/ui/CtaBand';
+import { DataDecisionsCta } from '@/components/sections/DataDecisionsCta';
 import { CheckList } from '@/components/ui/CheckList';
 import { PainList } from '@/components/ui/PainList';
 
@@ -182,17 +182,7 @@ export default function HomePage() {
 
       <Section tight className="!pt-0">
         <Wrap>
-          <CtaBand
-            heading="Ready to turn your data into decisions?"
-            paragraph="Build a unified, AI-ready foundation in weeks — not months. Talk to our architects about your data estate, your AI ambitions, and the fastest path between them."
-          >
-            <Button href="/contact" variant="molten">
-              Talk to Experts
-            </Button>
-            <Button href="/industries" variant="ghost-dark">
-              Explore Industry Solutions
-            </Button>
-          </CtaBand>
+          <DataDecisionsCta />
         </Wrap>
       </Section>
     </>

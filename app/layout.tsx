@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ToastProvider } from '@/components/ui/ToastProvider';
+import { VisitorIntelligence } from '@/components/analytics/VisitorIntelligence';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="absolute -left-[9999px]" href="#app">
           Skip to content
         </a>
+        <VisitorIntelligence />
         <ToastProvider>
           <Header />
           <main id="app">{children}</main>
